@@ -1,13 +1,18 @@
----
-title: ForgeMaster Metalworks 🛠️
-colorFrom: blue
-colorTo: red
-emoji: 🐳
-sdk: static
-pinned: false
-tags:
-  - deepsite-v3
----
+# Dexcarte
 
-# Welcome to your new DeepSite project!
-This project was created with [DeepSite](https://deepsite.hf.co).
+A professional website for Dexcarte - Comércio de Ferro Forjado e Construções, a Portuguese metalworking company specializing in wrought iron work and metal construction.
+
+## Features
+
+- Service catalog pages
+- Portfolio showcase
+- Contact information
+- Quote request functionality
+
+## Technology
+
+- HTML5
+- CSS3
+- JavaScript
+- React components
+
