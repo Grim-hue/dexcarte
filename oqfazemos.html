@@ -17,17 +17,72 @@
             font-family: 'Playfair Display', serif;
         }
         
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .gallery-item {
+        .service-card {
             transition: all 0.3s ease;
+            border-top: 3px solid transparent;
         }
         
-        .gallery-item:hover {
-            transform: scale(1.05);
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 5px 10px -5px rgba(0, 0, 0, 0.04);
+            border-top-color: #d97706;
+        }
+        
+        .process-step {
+            position: relative;
+        }
+        
+        .process-step:not(:last-child):after {
+            content: "";
+            position: absolute;
+            top: 40px;
+            right: -40px;
+            width: 40px;
+            height: 2px;
+            background-color: #d97706;
+        }
+        
+        @media (max-width: 768px) {
+            .process-step:not(:last-child):after {
+                display: none;
+            }
+        }
+        
+        .material-card {
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .material-card:hover {
+            transform: translateY(-5px);
+            border-bottom-color: #d97706;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #d97706;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .hero-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
     </style>
 </head>
@@ -37,15 +92,15 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center">
-                    <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/Dexcarte-Com%C3%A9rcio+De+Ferro+E+Constru%C3%A7%C3%B5es+Lda-222w.webp" alt="Dexcarte Logo" class="h-16">
+                    <img src="images/logo-dexcarte.webp" alt="Dexcarte Logo" class="h-16">
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-800 hover:text-yellow-600 font-medium">Home</a>
-                    <a href="oqfazemos.html" class="text-yellow-600 font-medium">O que Fazemos</a>
-                    <a href="catalogos.html" class="text-gray-800 hover:text-yellow-600 font-medium">Catálogos</a>
-<a href="obras.html" class="text-gray-800 hover:text-yellow-600 font-medium">Obras</a>
-<a href="pedido_orcamento.html" class="text-gray-800 hover:text-yellow-600 font-medium">Pedido de Orçamentos</a>
-<a href="#" class="text-gray-800 hover:text-yellow-600 font-medium">Contactos</a>
+                    <a href="index.html" class="nav-link text-gray-800 font-medium">Home</a>
+                    <a href="oqfazemos.html" class="nav-link active text-yellow-600 font-medium">O que Fazemos</a>
+                    <a href="catalogos.html" class="nav-link text-gray-800 font-medium">Catálogos</a>
+                    <a href="obras.html" class="nav-link text-gray-800 font-medium">Obras</a>
+                    <a href="pedido_orcamento.html" class="nav-link text-gray-800 font-medium">Pedido de Orçamentos</a>
+                    <a href="contactos.html" class="nav-link text-gray-800 font-medium">Contactos</a>
                 </div>
                 <div class="md:hidden">
                     <button id="mobileMenuButton" class="text-gray-800">
@@ -62,155 +117,161 @@
             <a href="index.html" class="block py-2 text-gray-800 hover:text-yellow-600">Home</a>
             <a href="oqfazemos.html" class="block py-2 text-yellow-600">O que Fazemos</a>
             <a href="catalogos.html" class="block py-2 text-gray-800 hover:text-yellow-600">Catálogos</a>
-<a href="obras.html" class="block py-2 text-gray-800 hover:text-yellow-600">Obras</a>
-<a href="pedido_orcamento.html" class="block py-2 text-gray-800 hover:text-yellow-600">Pedido de Orçamentos</a>
-<a href="#" class="block py-2 text-gray-800 hover:text-yellow-600">Contactos</a>
+            <a href="obras.html" class="block py-2 text-gray-800 hover:text-yellow-600">Obras</a>
+            <a href="pedido_orcamento.html" class="block py-2 text-gray-800 hover:text-yellow-600">Pedido de Orçamentos</a>
+            <a href="contactos.html" class="block py-2 text-gray-800 hover:text-yellow-600">Contactos</a>
         </div>
     </div>
 
     <!-- Hero Section -->
-    <section class="bg-yellow-700 text-white py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">O Que Fazemos</h1>
-            <p class="text-xl max-w-3xl mx-auto">Especializados em ferro forjado e construções metálicas, criamos soluções personalizadas e duradouras para o seu espaço.</p>
+    <section class="bg-yellow-700 text-white py-20 hero-pattern">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">O Que Fazemos</h1>
+                <p class="text-xl mb-8">Especializados em ferro forjado e construções metálicas, criamos soluções personalizadas e duradouras para o seu espaço.</p>
+                <a href="#services" class="inline-flex items-center bg-white hover:bg-gray-100 text-yellow-700 font-bold py-3 px-6 rounded-lg transition duration-300">
+                    <span>Conheça nossos serviços</span>
+                    <i data-feather="arrow-down" class="ml-2 w-5 h-5"></i>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="py-16 bg-white">
+    <section id="services" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nossos Serviços</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Combinamos tradição artesanal com técnicas modernas para criar peças únicas em ferro forjado e estruturas metálicas.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10">
                 <!-- Service 1 -->
-                <div class="flex flex-col md:flex-row gap-6">
-                    <div class="flex-shrink-0">
-                        <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center">
-                            <i data-feather="grid" class="text-yellow-600 w-6 h-6"></i>
+                <div class="service-card bg-gray-50 p-8 rounded-lg">
+                    <div class="flex items-start mb-6">
+                        <div class="bg-yellow-100 p-3 rounded-lg mr-4">
+                            <i data-feather="grid" class="text-yellow-600 w-8 h-8"></i>
                         </div>
+                        <h3 class="text-2xl font-bold">Portões e Gradeamentos</h3>
                     </div>
-                    <div>
-                        <h3 class="text-2xl font-bold mb-3">Portões e Gradeamentos</h3>
-                        <p class="text-gray-600 mb-4">Fabricamos portões e gradeamentos em ferro forjado, combinando segurança e estética. Desde modelos clássicos a designs contemporâneos, todos são personalizados às necessidades do cliente.</p>
-                        <ul class="space-y-2 text-gray-600">
-                            <li class="flex items-start">
-                                <i data-feather="check" class="text-yellow-600 mr-2 w-4 h-4 flex-shrink-0"></i>
-                                <span>Portões de entrada e interiores</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i data-feather="check" class="text-yellow-600 mr-2 w-4 h-4 flex-shrink-0"></i>
-                                <span>Gradeamentos para varandas e escadas</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i data-feather="check" class="text-yellow-600 mr-2 w-4 h-4 flex-shrink-0"></i>
-                                <span>Sistemas automáticos e manuais</span>
-                            </li>
-                        </ul>
-                    </div>
+                    <p class="text-gray-600 mb-6">Fabricamos portões e gradeamentos em ferro forjado, combinando segurança e estética. Desde modelos clássicos a designs contemporâneos, todos são personalizados às necessidades do cliente.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700">Portões de entrada e interiores</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700">Gradeamentos para varandas e escadas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700">Sistemas automáticos e manuais</span>
+                        </li>
+                    </ul>
                 </div>
 
                 <!-- Service 2 -->
-                <div class="flex flex-col md:flex-row gap-6">
-                    <div class="flex-shrink-0">
-                        <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center">
-                            <i data-feather="layers" class="text-yellow-600 w-6 h-6"></i>
+                <div class="service-card bg-gray-50 p-8 rounded-lg">
+                    <div class="flex items-start mb-6">
+                        <div class="bg-yellow-100 p-3 rounded-lg mr-4">
+                            <i data-feather="layers" class="text-yellow-600 w-8 h-8"></i>
                         </div>
+                        <h3 class="text-2xl font-bold">Escadas e Corrimões</h3>
                     </div>
-                    <div>
-                        <h3 class="text-2xl font-bold mb-3">Escadas e Corrimões</h3>
-                        <p class="text-gray-600 mb-4">Criamos escadas e corrimões em ferro que combinam funcionalidade e design. Soluções seguras e elegantes para espaços residenciais e comerciais.</p>
-                        <ul class="space-y-2 text-gray-600">
-                            <li class="flex items-start">
-                                <i data-feather="check" class="text-yellow-600 mr-2 w-4 h-4 flex-shrink-0"></i>
-                                <span>Escadas em ferro inteiras</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i data-feather="check" class="text-yellow-600 mr-2 w-4 h-4 flex-shrink-0"></i>
-                                <span>Corrimões interiores e exteriores</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i data-feather="check" class="text-yellow-600 mr-2 w-4 h-4 flex-shrink-0"></i>
-                                <span>Designs personalizados</span>
-                            </li>
-                        </ul>
-                    </div>
+                    <p class="text-gray-600 mb-6">Criamos escadas e corrimões em ferro que combinam funcionalidade e design. Soluções seguras e elegantes para espaços residenciais e comerciais.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700">Escadas em ferro inteiras</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700">Corrimões interiores e exteriores</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700">Designs personalizados</span>
+                        </li>
+                    </ul>
                 </div>
 
                 <!-- Service 3 -->
-                <div class="flex flex-col md:flex-row gap-6">
-                    <div class="flex-shrink-0">
-                        <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center">
-                            <i data-feather="tool" class="text-yellow-600 w-6 h-6"></i>
+                <div class="service-card bg-gray-50 p-8 rounded-lg">
+                    <div class="flex items-start mb-6">
+                        <div class="bg-yellow-100 p-3 rounded-lg mr-4">
+                            <i data-feather="tool" class="text-yellow-600 w-8 h-8"></i>
                         </div>
+                        <h3 class="text-2xl font-bold">Peças Artesanais</h3>
                     </div>
-                    <div>
-                        <h3 class="text-2xl font-bold mb-3">Peças Artesanais</h3>
-                        <p class="text-gray-600 mb-4">Peças únicas em ferro forjado criadas por nossos artesãos especializados. Cada peça é trabalhada manualmente com atenção aos detalhes.</p>
-                        <ul class="space-y-2 text-gray-600">
-                            <li class="flex items-start">
-                                <i data-feather="check" class="text-yellow-600 mr-2 w-4 h-4 flex-shrink-0"></i>
-                                <span>Mobiliário urbano e decorativo</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i data-feather="check" class="text-yellow-600 mr-2 w-4 h-4 flex-shrink-0"></i>
-                                <span>Elementos arquitetônicos</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i data-feather="check" class="text-yellow-600 mr-2 w-4 h-4 flex-shrink-0"></i>
-                                <span>Peças sob encomenda</span>
-                            </li>
-                        </ul>
-                    </div>
+                    <p class="text-gray-600 mb-6">Peças únicas em ferro forjado criadas por nossos artesãos especializados. Cada peça é trabalhada manualmente com atenção aos detalhes.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700">Mobiliário urbano e decorativo</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700">Elementos arquitetônicos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700">Peças sob encomenda</span>
+                        </li>
+                    </ul>
                 </div>
 
                 <!-- Service 4 -->
-                <div class="flex flex-col md:flex-row gap-6">
-                    <div class="flex-shrink-0">
-                        <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center">
-                            <i data-feather="box" class="text-yellow-600 w-6 h-6"></i>
+                <div class="service-card bg-gray-50 p-8 rounded-lg">
+                    <div class="flex items-start mb-6">
+                        <div class="bg-yellow-100 p-3 rounded-lg mr-4">
+                            <i data-feather="box" class="text-yellow-600 w-8 h-8"></i>
                         </div>
+                        <h3 class="text-2xl font-bold">Estruturas Metálicas</h3>
                     </div>
-                    <div>
-                        <h3 class="text-2xl font-bold mb-3">Estruturas Metálicas</h3>
-                        <p class="text-gray-600 mb-4">Projetamos e construímos estruturas metálicas para diversos fins, desde pequenos projetos residenciais a médias construções comerciais.</p>
-                        <ul class="space-y-2 text-gray-600">
-                            <li class="flex items-start">
-                                <i data-feather="check" class="text-yellow-600 mr-2 w-4 h-4 flex-shrink-0"></i>
-                                <span>Coberturas e toldos metálicos</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i data-feather="check" class="text-yellow-600 mr-2 w-4 h-4 flex-shrink-0"></i>
-                                <span>Estruturas para armazéns e pavilhões</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i data-feather="check" class="text-yellow-600 mr-2 w-4 h-4 flex-shrink-0"></i>
-                                <span>Revestimentos e proteções</span>
-                            </li>
-                        </ul>
-                    </div>
+                    <p class="text-gray-600 mb-6">Projetamos e construímos estruturas metálicas para diversos fins, desde pequenos projetos residenciais a médias construções comerciais.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700">Coberturas e toldos metálicos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700">Estruturas para armazéns e pavilhões</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700">Revestimentos e proteções</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Materials Section -->
-    <section class="py-16 bg-gray-100">
+    <section class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Materiais que Trabalhamos</h2>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Materiais que Trabalhamos</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Utilizamos materiais de alta qualidade para garantir durabilidade e excelência em todos os nossos projetos.</p>
+            </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                <div class="material-card bg-white p-8 rounded-lg shadow-sm text-center">
                     <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6">
                         <i data-feather="box" class="text-yellow-600 w-8 h-8"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Ferro Forjado</h3>
                     <p class="text-gray-600">Material tradicional e durável, ideal para peças artesanais e estruturas que exigem resistência e acabamento manual.</p>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                <div class="material-card bg-white p-8 rounded-lg shadow-sm text-center">
                     <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6">
                         <i data-feather="box" class="text-yellow-600 w-8 h-8"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Aço Inoxidável</h3>
                     <p class="text-gray-600">Para projetos que exigem alta resistência à corrosão, com acabamento moderno e minimalista.</p>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                <div class="material-card bg-white p-8 rounded-lg shadow-sm text-center">
                     <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6">
                         <i data-feather="box" class="text-yellow-600 w-8 h-8"></i>
                     </div>
@@ -222,48 +283,54 @@
     </section>
 
     <!-- Process Section -->
-    <section class="py-16 bg-white">
+    <section class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Nosso Processo de Trabalho</h2>
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="text-center">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nosso Processo de Trabalho</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Um processo cuidadoso e meticuloso para garantir a qualidade em cada etapa do projeto.</p>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="process-step text-center mb-10 md:mb-0 flex-1">
                     <div class="bg-yellow-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <span class="text-yellow-600 font-bold">1</span>
+                        <span class="text-yellow-600 font-bold text-xl">1</span>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Consulta</h3>
-                    <p class="text-gray-600">Análise das necessidades e preferências do cliente para entender o projeto.</p>
+                    <p class="text-gray-600 max-w-xs mx-auto">Análise das necessidades e preferências do cliente para entender o projeto.</p>
                 </div>
-                <div class="text-center">
+                <div class="process-step text-center mb-10 md:mb-0 flex-1">
                     <div class="bg-yellow-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <span class="text-yellow-600 font-bold">2</span>
+                        <span class="text-yellow-600 font-bold text-xl">2</span>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Projeto</h3>
-                    <p class="text-gray-600">Criação de desenhos técnicos e visualizações para aprovação.</p>
+                    <p class="text-gray-600 max-w-xs mx-auto">Criação de desenhos técnicos e visualizações para aprovação.</p>
                 </div>
-                <div class="text-center">
+                <div class="process-step text-center mb-10 md:mb-0 flex-1">
                     <div class="bg-yellow-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <span class="text-yellow-600 font-bold">3</span>
+                        <span class="text-yellow-600 font-bold text-xl">3</span>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Fabricação</h3>
-                    <p class="text-gray-600">Execução artesanal com materiais de alta qualidade e técnicas precisas.</p>
+                    <p class="text-gray-600 max-w-xs mx-auto">Execução artesanal com materiais de alta qualidade e técnicas precisas.</p>
                 </div>
-                <div class="text-center">
+                <div class="process-step text-center flex-1">
                     <div class="bg-yellow-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <span class="text-yellow-600 font-bold">4</span>
+                        <span class="text-yellow-600 font-bold text-xl">4</span>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Instalação</h3>
-                    <p class="text-gray-600">Montagem profissional no local, garantindo perfeito acabamento.</p>
+                    <p class="text-gray-600 max-w-xs mx-auto">Montagem profissional no local, garantindo perfeito acabamento.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 bg-yellow-600 text-white">
+    <section class="py-20 bg-yellow-600 text-white">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6">Interessado nos nossos serviços?</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Interessado nos nossos serviços?</h2>
             <p class="text-xl mb-8 max-w-2xl mx-auto">Solicite um orçamento sem compromisso e deixe-nos materializar as suas ideias.</p>
-            <a href="#" class="inline-block bg-white hover:bg-gray-100 text-yellow-600 font-bold py-3 px-8 rounded-lg transition duration-300">Pedir Orçamento</a>
+            <a href="pedido_orcamento.html" class="inline-flex items-center bg-white hover:bg-gray-100 text-yellow-600 font-bold py-4 px-8 rounded-lg transition duration-300">
+                <span>Pedir Orçamento</span>
+                <i data-feather="arrow-right" class="ml-2 w-5 h-5"></i>
+            </a>
         </div>
     </section>
 
@@ -272,19 +339,19 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/Dexcarte-Com%C3%A9rcio+De+Ferro+E+Constru%C3%A7%C3%B5es+Lda-222w.webp" alt="Dexcarte Logo" class="h-16 mb-4">
+                    <img src="images/logo-dexcarte.webp" alt="Dexcarte Logo" class="h-16 mb-4">
                     <div class="flex space-x-4 mb-6">
-                        <a href="#" class="hover:text-yellow-400"><i data-feather="facebook"></i></a>
-                        <a href="#"><img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/Livro+3-120w.png" alt="Livro de Reclamações" class="h-6"></a>
+                        <a href="https://facebook.com" target="_blank" class="hover:text-yellow-400"><i data-feather="facebook"></i></a>
+                        <a href="https://www.livroreclamacoes.pt" target="_blank"><img src="images/livro-reclamacoes.png" alt="Livro de Reclamações" class="h-6"></a>
                     </div>
                     <h4 class="text-lg font-bold mb-4">Serviços</h4>
                     <ul class="space-y-2">
                         <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
                         <li><a href="oqfazemos.html" class="hover:text-yellow-400">O que Fazemos</a></li>
                         <li><a href="catalogos.html" class="hover:text-yellow-400">Catálogos</a></li>
-<li><a href="obras.html" class="hover:text-yellow-400">Obras</a></li>
-<li><a href="pedido_orcamento.html" class="hover:text-yellow-400">Pedido de Orçamentos</a></li>
-<li><a href="#" class="hover:text-yellow-400">Contactos</a></li>
+                        <li><a href="obras.html" class="hover:text-yellow-400">Obras</a></li>
+                        <li><a href="pedido_orcamento.html" class="hover:text-yellow-400">Pedido de Orçamentos</a></li>
+                        <li><a href="contactos.html" class="hover:text-yellow-400">Contactos</a></li>
                     </ul>
                 </div>
                 <div>
@@ -324,8 +391,8 @@
             </div>
             <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
                 <div class="mb-4">
-                    <a href="#" class="hover:text-yellow-400 mr-4">Política de Privacidade</a>
-                    <a href="#" class="hover:text-yellow-400">Política de Cookies</a>
+                    <a href="contactos.html" class="hover:text-yellow-400 mr-4">Política de Privacidade</a>
+                    <a href="contactos.html" class="hover:text-yellow-400">Política de Cookies</a>
                 </div>
                 <p>© 2025 All rights reserved to Dexcarte-Comércio de Ferro Forjado e Construções – Powered by Páginas Amarelas</p>
             </div>

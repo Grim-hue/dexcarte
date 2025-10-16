@@ -6,9 +6,11 @@
     <title>Dexcarte</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
         
@@ -26,9 +28,15 @@
             background-position: center;
         }
         
+        .service-card {
+            transition: all 0.3s ease;
+            border-top: 3px solid transparent;
+        }
+        
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 5px 10px -5px rgba(0, 0, 0, 0.04);
+            border-top-color: #d97706;
         }
         
         .gallery-item {
@@ -37,6 +45,45 @@
         
         .gallery-item:hover {
             transform: scale(1.05);
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #d97706;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-link.active {
+            color: #d97706;
+        }
+        
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .hero-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
     </style>
 </head>
@@ -63,13 +110,13 @@
                     <img src="images/logo-dexcarte.webp" alt="Dexcarte Logo" class="h-16">
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-800 hover:text-yellow-600 font-medium">Home</a>
-                    <a href="oqfazemos.html" class="text-gray-800 hover:text-yellow-600 font-medium">O que Fazemos</a>
-                    <a href="catalogos.html" class="text-gray-800 hover:text-yellow-600 font-medium">Catálogos</a>
-                    <a href="obras.html" class="text-gray-800 hover:text-yellow-600 font-medium">Obras</a>
-                    <a href="pedido_orcamento.html" class="text-gray-800 hover:text-yellow-600 font-medium">Pedido de Orçamentos</a>
-                    <a href="contactos.html" class="text-gray-800 hover:text-yellow-600 font-medium">Contactos</a>
-</div>
+                    <a href="index.html" class="nav-link active text-gray-800 font-medium">Home</a>
+                    <a href="oqfazemos.html" class="nav-link text-gray-800 hover:text-yellow-600 font-medium">O que Fazemos</a>
+                    <a href="catalogos.html" class="nav-link text-gray-800 hover:text-yellow-600 font-medium">Catálogos</a>
+                    <a href="obras.html" class="nav-link text-gray-800 hover:text-yellow-600 font-medium">Obras</a>
+                    <a href="pedido_orcamento.html" class="nav-link text-gray-800 hover:text-yellow-600 font-medium">Pedido de Orçamentos</a>
+                    <a href="contactos.html" class="nav-link text-gray-800 hover:text-yellow-600 font-medium">Contactos</a>
+                </div>
                 <div class="md:hidden">
                     <button id="mobileMenuButton" class="text-gray-800">
                         <span class="material-icons">menu</span>
@@ -82,63 +129,86 @@
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg absolute w-full z-30">
         <div class="container mx-auto px-4 py-2">
-                    <a href="index.html" class="block py-2 text-gray-800 hover:text-yellow-600">Home</a>
-                    <a href="oqfazemos.html" class="block py-2 text-gray-800 hover:text-yellow-600">O que Fazemos</a>
-                    <a href="catalogos.html" class="block py-2 text-gray-800 hover:text-yellow-600">Catálogos</a>
-                    <a href="obras.html" class="block py-2 text-gray-800 hover:text-yellow-600">Obras</a>
-                    <a href="pedido_orcamento.html" class="block py-2 text-gray-800 hover:text-yellow-600">Pedido de Orçamentos</a>
-                    <a href="contactos.html" class="block py-2 text-gray-800 hover:text-yellow-600">Contactos</a>
-</div>
+            <a href="index.html" class="block py-2 text-yellow-600 font-medium">Home</a>
+            <a href="oqfazemos.html" class="block py-2 text-gray-800 hover:text-yellow-600">O que Fazemos</a>
+            <a href="catalogos.html" class="block py-2 text-gray-800 hover:text-yellow-600">Catálogos</a>
+            <a href="obras.html" class="block py-2 text-gray-800 hover:text-yellow-600">Obras</a>
+            <a href="pedido_orcamento.html" class="block py-2 text-gray-800 hover:text-yellow-600">Pedido de Orçamentos</a>
+            <a href="contactos.html" class="block py-2 text-gray-800 hover:text-yellow-600">Contactos</a>
+        </div>
     </div>
+
     <!-- Hero Section -->
-    <section class="hero-section text-white py-24" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/BANNER+1.webp'); background-size: cover; background-position: center;">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 opacity-0">Dexcarte-Comércio de Ferro Forjado e Construções</h1>
-            <p class="text-xl md:text-2xl mb-8 opacity-0">Onde a resistência do ferro encontra a beleza do design</p>
-            <a href="contactos.html" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 opacity-0">Contacte-nos</a>
+    <section class="hero-pattern text-white py-24" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/BANNER+1.webp'); background-size: cover; background-position: center;">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Dexcarte-Comércio de Ferro Forjado e Construções</h1>
+                <p class="text-xl md:text-2xl mb-8">Onde a resistência do ferro encontra a beleza do design</p>
+                <a href="contactos.html" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-4 px-8 rounded-lg transition duration-300">
+                    <span>Contacte-nos</span>
+                    <span class="material-icons ml-2">arrow_forward</span>
+                </a>
+            </div>
         </div>
     </section>
-<!-- Services Section -->
-    <section class="py-16 bg-white">
+
+    <!-- Services Section -->
+    <section class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Nossos Serviços</h2>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nossos Serviços</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Especializados em ferro forjado e construções metálicas, criamos soluções personalizadas e duradouras para o seu espaço.</p>
+            </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Service Card 1 -->
-                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden transition duration-300">
                     <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/image+6-1920w.webp" alt="Portões e Gradeamentos" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Fabrico de Portões e Gradeamentos</h3>
                         <p class="text-gray-600 mb-4">Estruturas robustas e elegantes, adaptadas ao estilo e necessidades de cada cliente.</p>
-                        <a href="oqfazemos.html" class="text-yellow-600 font-medium hover:text-yellow-700">Leia Mais <span class="material-icons inline">arrow_forward</span></a>
+                        <a href="oqfazemos.html" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700">
+                            <span>Leia Mais</span>
+                            <span class="material-icons ml-1 text-sm">arrow_forward</span>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Service Card 2 -->
-                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden transition duration-300">
                     <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/image+9-1920w.webp" alt="Escadas e Corrimões" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Escadas e Corrimões em Ferro</h3>
                         <p class="text-gray-600 mb-4">Design seguro e sofisticado, ideal para interiores e exteriores.</p>
-                        <a href="oqfazemos.html" class="text-yellow-600 font-medium hover:text-yellow-700">Leia Mais <span class="material-icons inline">arrow_forward</span></a>
+                        <a href="oqfazemos.html" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700">
+                            <span>Leia Mais</span>
+                            <span class="material-icons ml-1 text-sm">arrow_forward</span>
+                        </a>
                     </div>
                 </div>
+
                 <!-- Service Card 3 -->
-                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden transition duration-300">
                     <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/image+2-1920w.webp" alt="Peças Artesanais" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Peças Artesanais em Ferro Forjado</h3>
                         <p class="text-gray-600 mb-4">Criações únicas que valorizam qualquer espaço, com atenção ao detalhe e ao acabamento.</p>
-                        <a href="oqfazemos.html" class="text-yellow-600 font-medium hover:text-yellow-700">Leia Mais <span class="material-icons inline">arrow_forward</span></a>
+                        <a href="oqfazemos.html" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700">
+                            <span>Leia Mais</span>
+                            <span class="material-icons ml-1 text-sm">arrow_forward</span>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Service Card 4 -->
-                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden transition duration-300">
                     <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/IMAGE+1-1920w.webp" alt="Estruturas Metálicas" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Estruturas Metálicas</h3>
                         <p class="text-gray-600 mb-4">Projetos de pequeno e médio porte, concebidos com precisão e durabilidade.</p>
-                        <a href="oqfazemos.html" class="text-yellow-600 font-medium hover:text-yellow-700">Leia Mais <span class="material-icons inline">arrow_forward</span></a>
+                        <a href="oqfazemos.html" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700">
+                            <span>Leia Mais</span>
+                            <span class="material-icons ml-1 text-sm">arrow_forward</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -150,37 +220,43 @@
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold mb-6">Personalize o seu projeto connosco</h2>
             <p class="text-xl mb-8 max-w-2xl mx-auto">Solicite o seu orçamento agora e dê vida às suas ideias com qualidade e profissionalismo.</p>
-            <a href="pedido_orcamento.html" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">Contacte-nos!</a>
+            <a href="pedido_orcamento.html" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                <span>Contacte-nos!</span>
+                <span class="material-icons ml-2">arrow_forward</span>
+            </a>
         </div>
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="py-16 bg-white">
+    <section class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Por que nos escolher</h2>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Por que nos escolher</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Mais de 20 anos de experiência em ferro forjado e construções metálicas, com um compromisso inabalável com a qualidade.</p>
+            </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
+                <div class="feature-card text-center">
                     <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
                         <span class="material-icons text-yellow-600 text-3xl">emoji_events</span>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Experiência Comprovada</h3>
                     <p class="text-gray-600">Mais de 20 anos de excelência em ferro forjado e construções metálicas</p>
                 </div>
-                <div class="text-center">
+                <div class="feature-card text-center">
                     <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
                         <span class="material-icons text-yellow-600 text-3xl">star</span>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Qualidade e Personalização</h3>
                     <p class="text-gray-600">Produtos feitos à medida, com materiais de alta qualidade.</p>
                 </div>
-                <div class="text-center">
+                <div class="feature-card text-center">
                     <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
                         <span class="material-icons text-yellow-600 text-3xl">build</span>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Tradição e Inovação</h3>
                     <p class="text-gray-600">Aliamos o artesanato tradicional a técnicas modernas.</p>
                 </div>
-                <div class="text-center">
+                <div class="feature-card text-center">
                     <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
                         <span class="material-icons text-yellow-600 text-3xl">schedule</span>
                     </div>
@@ -189,15 +265,21 @@
                 </div>
             </div>
             <div class="text-center mt-12">
-                <a href="oqfazemos.html" class="inline-block border-2 border-yellow-600 text-yellow-600 hover:bg-yellow-600 hover:text-white font-bold py-2 px-6 rounded-lg transition duration-300">Saiba mais sobre nós</a>
+                <a href="oqfazemos.html" class="inline-flex items-center border-2 border-yellow-600 text-yellow-600 hover:bg-yellow-600 hover:text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    <span>Saiba mais sobre nós</span>
+                    <span class="material-icons ml-2">arrow_forward</span>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
-    <section class="py-16 bg-gray-100">
+    <section class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Alguns dos nossos projectos</h2>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Alguns dos nossos projectos</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explore nossa galeria de trabalhos realizados e inspire-se para o seu próximo projeto.</p>
+            </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="gallery-item overflow-hidden rounded-lg shadow-md">
                     <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/image+3-1920w.webp" alt="Project 1" class="w-full h-full object-cover">
@@ -213,15 +295,18 @@
                 </div>
             </div>
             <div class="text-center mt-8">
-                <a href="obras.html" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Ver Mais</a>
+                <a href="obras.html" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    <span>Ver Mais</span>
+                    <span class="material-icons ml-2">arrow_forward</span>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Contact CTA -->
-    <section class="py-16 bg-yellow-600 text-white">
+    <section class="py-20 bg-yellow-600 text-white hero-pattern">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6">Faz o teu pedido orçamento!</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Faz o teu pedido orçamento!</h2>
             <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-8">
                 <div class="flex items-center">
                     <span class="material-icons mr-2">phone</span>
@@ -234,6 +319,10 @@
                     <a href="mailto:dexcarte@gmail.com" class="hover:underline">dexcarte@gmail.com</a>
                 </div>
             </div>
+            <a href="pedido_orcamento.html" class="inline-flex items-center bg-white hover:bg-gray-100 text-yellow-600 font-bold py-3 px-8 rounded-lg transition duration-300">
+                <span>Solicitar Orçamento</span>
+                <span class="material-icons ml-2">arrow_forward</span>
+            </a>
         </div>
     </section>
 
@@ -252,10 +341,10 @@
                         <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
                         <li><a href="oqfazemos.html" class="hover:text-yellow-400">O que Fazemos</a></li>
                         <li><a href="catalogos.html" class="hover:text-yellow-400">Catálogos</a></li>
-<li><a href="obras.html" class="hover:text-yellow-400">Obras</a></li>
-<li><a href="pedido_orcamento.html" class="hover:text-yellow-400">Pedido de Orçamentos</a></li>
+                        <li><a href="obras.html" class="hover:text-yellow-400">Obras</a></li>
+                        <li><a href="pedido_orcamento.html" class="hover:text-yellow-400">Pedido de Orçamentos</a></li>
                         <li><a href="contactos.html" class="hover:text-yellow-400">Contactos</a></li>
-</ul>
+                    </ul>
                 </div>
                 <div>
                     <h4 class="text-lg font-bold mb-4">Onde estamos</h4>
@@ -302,105 +391,14 @@
             </div>
         </div>
     </footer>
+
     <script>
-        // GSAP Animations
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Page fade-in transition
-        gsap.from("body", {
-            duration: 0.8,
-            opacity: 0,
-            ease: "power2.inOut"
-        });
-
-        // Hero section animation
-        gsap.from(".hero-section h1", {
-            duration: 1,
-            y: 50,
-            opacity: 0,
-            ease: "power3.out",
-            delay: 0.2
-        });
-
-        gsap.from(".hero-section p", {
-            duration: 1,
-            y: 50,
-            opacity: 0,
-            ease: "power3.out",
-            delay: 0.4
-        });
-
-        gsap.from(".hero-section a", {
-            duration: 1,
-            y: 50,
-            opacity: 0,
-            ease: "power3.out",
-            delay: 0.6
-        });
-// Service cards animation
-        gsap.utils.toArray(".service-card").forEach(card => {
-            gsap.from(card, {
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top 80%",
-                    toggleActions: "play none none none"
-                },
-                y: 50,
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.2
-            });
-        });
-
-        // Why choose us animation
-        gsap.utils.toArray(".why-choose-us .text-center").forEach(item => {
-            gsap.from(item, {
-                scrollTrigger: {
-                    trigger: item,
-                    start: "top 80%",
-                    toggleActions: "play none none none"
-                },
-                y: 30,
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.1
-            });
-        });
-
-        // Gallery animation
-        gsap.utils.toArray(".gallery-item").forEach(item => {
-            gsap.from(item, {
-                scrollTrigger: {
-                    trigger: item,
-                    start: "top 80%",
-                    toggleActions: "play none none none"
-                },
-                scale: 0.9,
-                opacity: 0,
-                duration: 0.6,
-                stagger: 0.1
-            });
-        });
-
-        // CTA section animation
-        gsap.from(".bg-yellow-600", {
-            scrollTrigger: {
-                trigger: ".bg-yellow-600",
-                start: "top 80%",
-                toggleActions: "play none none none"
-            },
-            y: 30,
-            opacity: 0,
-            duration: 0.8
-        });
-
         // Mobile menu toggle
-const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
         const mobileMenu = document.getElementById('mobileMenu');
         
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-            feather.replace();
         });
         
         // Cookie consent
@@ -421,33 +419,44 @@ const mobileMenuButton = document.getElementById('mobileMenuButton');
             localStorage.setItem('cookieConsent', 'denied');
             cookieConsent.classList.add('hidden');
         });
-        // Initialize feather icons and GSAP
+        
+        // Initialize GSAP animations
         document.addEventListener('DOMContentLoaded', () => {
-            feather.replace();
-            gsap.set(".hero-section h1, .hero-section p, .hero-section a", { opacity: 1 });
+            // GSAP - Register ScrollTrigger plugin
+            gsap.registerPlugin(ScrollTrigger);
             
-            // Animate navigation items sequentially
-            gsap.from("nav a", {
-                duration: 0.6,
-                y: -20,
-                opacity: 0,
-                stagger: 0.1,
-                ease: "back.out"
+            // Animation for feature cards
+            gsap.utils.toArray(".feature-card").forEach((item, index) => {
+                gsap.from(item, {
+                    scrollTrigger: {
+                        trigger: item,
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    },
+                    opacity: 0,
+                    y: 30,
+                    duration: 0.6,
+                    delay: index * 0.1,
+                    ease: "power2.out"
+                });
             });
             
-            // Smooth reveal for footer
-            gsap.from("footer", {
-                scrollTrigger: {
-                    trigger: "footer",
-                    start: "top bottom",
-                    toggleActions: "play none none none"
-                },
-                duration: 1,
-                opacity: 0,
-                y: 50,
-                ease: "power2.out"
+            // Animation for gallery items
+            gsap.utils.toArray(".gallery-item").forEach((item, index) => {
+                gsap.from(item, {
+                    scrollTrigger: {
+                        trigger: item,
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    },
+                    opacity: 0,
+                    y: 50,
+                    duration: 0.8,
+                    delay: index * 0.1,
+                    ease: "power2.out"
+                });
             });
         });
-</script>
+    </script>
 </body>
 </html>

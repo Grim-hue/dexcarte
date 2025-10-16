@@ -18,6 +18,49 @@
         h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
         }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #d97706;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .contact-card {
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 5px 10px -5px rgba(0, 0, 0, 0.04);
+            border-left-color: #d97706;
+        }
+        
+        .hero-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .form-input:focus {
+            border-color: #d97706;
+            box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -29,12 +72,12 @@
                     <img src="images/logo-dexcarte.webp" alt="Dexcarte Logo" class="h-16">
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-800 hover:text-yellow-600 font-medium">Home</a>
-                    <a href="oqfazemos.html" class="text-gray-800 hover:text-yellow-600 font-medium">O que Fazemos</a>
-                    <a href="catalogos.html" class="text-gray-800 hover:text-yellow-600 font-medium">Catálogos</a>
-                    <a href="obras.html" class="text-gray-800 hover:text-yellow-600 font-medium">Obras</a>
-                    <a href="pedido_orcamento.html" class="text-gray-800 hover:text-yellow-600 font-medium">Pedido de Orçamentos</a>
-                    <a href="contactos.html" class="text-yellow-600 font-medium">Contactos</a>
+                    <a href="index.html" class="nav-link text-gray-800 font-medium">Home</a>
+                    <a href="oqfazemos.html" class="nav-link text-gray-800 font-medium">O que Fazemos</a>
+                    <a href="catalogos.html" class="nav-link text-gray-800 font-medium">Catálogos</a>
+                    <a href="obras.html" class="nav-link text-gray-800 font-medium">Obras</a>
+                    <a href="pedido_orcamento.html" class="nav-link text-gray-800 font-medium">Pedido de Orçamentos</a>
+                    <a href="contactos.html" class="nav-link active text-yellow-600 font-medium">Contactos</a>
                 </div>
                 <div class="md:hidden">
                     <button id="mobileMenuButton" class="text-gray-800">
@@ -58,56 +101,170 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="bg-yellow-700 text-white py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Contactos</h1>
-            <p class="text-xl max-w-3xl mx-auto">Entre em contacto connosco para mais informações</p>
+    <section class="bg-yellow-700 text-white py-20 hero-pattern">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Contactos</h1>
+                <p class="text-xl">Entre em contacto connosco para mais informações sobre os nossos serviços ou para solicitar um orçamento personalizado.</p>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="py-16 bg-white">
+    <section class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <h2 class="text-3xl font-bold mb-6">Informações de Contacto</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Contact Information -->
+                <div class="lg:col-span-1">
+                    <div class="text-center lg:text-left mb-12">
+                        <h2 class="text-3xl font-bold mb-4">Informações de Contacto</h2>
+                        <p class="text-gray-600">Estamos disponíveis para esclarecer qualquer dúvida sobre os nossos serviços em ferro forjado e construções metálicas.</p>
+                    </div>
+                    
                     <div class="space-y-6">
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">Morada</h3>
-                            <address class="not-italic">
-                                <p>Quinta do Peixoto Carregado Park</p>
-                                <p>Armazém a Torre</p>
-                                <p>2580-512 Carregado</p>
-                            </address>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">Horário</h3>
-                            <p>Segunda a Sexta</p>
-                            <p>09:00 - 13:00 e 15:00 - 18:00</p>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">Contactos</h3>
-                            <div class="space-y-2">
-                                <p><span class="material-icons inline mr-2">phone</span> 263 859 145</p>
-                                <p><span class="material-icons inline mr-2">smartphone</span> 935 770 086</p>
-                                <p><span class="material-icons inline mr-2">mail</span> dexcarte@gmail.com</p>
-                                <p><span class="material-icons inline mr-2">print</span> 219 593 691</p>
+                        <!-- Address Card -->
+                        <div class="contact-card bg-gray-50 p-6 rounded-lg">
+                            <div class="flex items-start mb-4">
+                                <div class="bg-yellow-100 p-3 rounded-lg mr-4">
+                                    <span class="material-icons text-yellow-600">location_on</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2">Morada</h3>
+                                    <address class="not-italic text-gray-600">
+                                        <p>Quinta do Peixoto Carregado Park</p>
+                                        <p>Armazém a Torre</p>
+                                        <p>2580-512 Carregado</p>
+                                    </address>
+                                    <a href="https://maps.app.goo.gl/mJbLnRNt2CqscvuL7" class="inline-flex items-center text-yellow-600 font-medium mt-2">
+                                        <span>Ver no mapa</span>
+                                        <span class="material-icons ml-1 text-sm">arrow_forward</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">Redes Sociais</h3>
-                            <div class="flex space-x-4">
-                                <a href="https://facebook.com" target="_blank" class="text-yellow-600 hover:text-yellow-700">
-                                    <span class="material-icons">facebook</span>
-                                </a>
+
+                        <!-- Hours Card -->
+                        <div class="contact-card bg-gray-50 p-6 rounded-lg">
+                            <div class="flex items-start mb-4">
+                                <div class="bg-yellow-100 p-3 rounded-lg mr-4">
+                                    <span class="material-icons text-yellow-600">schedule</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2">Horário</h3>
+                                    <div class="text-gray-600">
+                                        <p class="font-medium">Segunda a Sexta</p>
+                                        <p>09:00 - 13:00</p>
+                                        <p>15:00 - 18:00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Details Card -->
+                        <div class="contact-card bg-gray-50 p-6 rounded-lg">
+                            <div class="flex items-start mb-4">
+                                <div class="bg-yellow-100 p-3 rounded-lg mr-4">
+                                    <span class="material-icons text-yellow-600">contact_phone</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2">Contactos</h3>
+                                    <div class="space-y-3 text-gray-600">
+                                        <div class="flex items-center">
+                                            <span class="material-icons text-yellow-600 mr-3">phone</span>
+                                            <a href="tel:263859145" class="hover:text-yellow-600">263 859 145</a>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <span class="material-icons text-yellow-600 mr-3">smartphone</span>
+                                            <a href="tel:935770086" class="hover:text-yellow-600">935 770 086</a>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <span class="material-icons text-yellow-600 mr-3">mail</span>
+                                            <a href="mailto:dexcarte@gmail.com" class="hover:text-yellow-600">dexcarte@gmail.com</a>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <span class="material-icons text-yellow-600 mr-3">print</span>
+                                            <span>219 593 691</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Media Card -->
+                        <div class="contact-card bg-gray-50 p-6 rounded-lg">
+                            <div class="flex items-start mb-4">
+                                <div class="bg-yellow-100 p-3 rounded-lg mr-4">
+                                    <span class="material-icons text-yellow-600">share</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2">Redes Sociais</h3>
+                                    <div class="flex space-x-4">
+                                        <a href="https://facebook.com" target="_blank" class="text-yellow-600 hover:text-yellow-700">
+                                            <span class="material-icons text-3xl">facebook</span>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <h2 class="text-3xl font-bold mb-6">Mapa</h2>
-                    <div class="aspect-w-16 aspect-h-9">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.029516683065!2d-9.003869423995922!3d38.71528317172763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1933c9d2b8c41f%3A0x3a2a0a9b0a8b8b8b!2sDexcarte-Com%C3%A9rcio%20de%20Ferro%20e%20Constru%C3%A7%C3%B5es%20Lda!5e0!3m2!1sen!2spt!4v1620000000000!5m2!1sen!2spt" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+                <!-- Map and Contact Form -->
+                <div class="lg:col-span-2">
+                    <!-- Map -->
+                    <div class="mb-12">
+                        <h2 class="text-3xl font-bold mb-6 text-center lg:text-left">Encontre-nos</h2>
+                        <div class="rounded-lg overflow-hidden shadow-md">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.029516683065!2d-9.003869423995922!3d38.71528317172763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1933c9d2b8c41f%3A0x3a2a0a9b0a8b8b8b!2sDexcarte-Com%C3%A9rcio%20de%20Ferro%20e%20Constru%C3%A7%C3%B5es%20Lda!5e0!3m2!1sen!2spt!4v1620000000000!5m2!1sen!2spt" 
+                                width="100%" 
+                                height="400" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy"
+                                class="w-full">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6 text-center lg:text-left">Envie-nos uma mensagem</h2>
+                        <form class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-gray-700 font-medium mb-2">Nome *</label>
+                                    <input type="text" id="name" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-600 transition duration-300" required>
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email *</label>
+                                    <input type="email" id="email" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-600 transition duration-300" required>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="phone" class="block text-gray-700 font-medium mb-2">Telefone</label>
+                                    <input type="tel" id="phone" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-600 transition duration-300">
+                                </div>
+                                <div>
+                                    <label for="subject" class="block text-gray-700 font-medium mb-2">Assunto *</label>
+                                    <select id="subject" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-600 transition duration-300" required>
+                                        <option value="" disabled selected>Selecione um assunto</option>
+                                        <option value="orcamento">Pedido de Orçamento</option>
+                                        <option value="informacao">Informação sobre Serviços</option>
+                                        <option value="duvida">Dúvida</option>
+                                        <option value="outro">Outro</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Mensagem *</label>
+                                <textarea id="message" rows="5" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-600 transition duration-300" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                                Enviar Mensagem
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -186,12 +343,15 @@
         
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-            feather.replace();
         });
         
-        // Initialize feather icons
-        document.addEventListener('DOMContentLoaded', () => {
-            feather.replace();
+        // Form submission
+        const contactForm = document.querySelector('form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Here you would normally send the form data to a server
+            alert('Obrigado pela sua mensagem! Entraremos em contacto brevemente.');
+            contactForm.reset();
         });
     </script>
 </body>
