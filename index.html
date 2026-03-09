@@ -36,7 +36,7 @@
         /* Hero Banner Parallax Styles */
         .hero-banner-parallax {
             min-height: 100vh;
-            background-image: url('images/banner%20hero%201-2880w.jpg');
+            background-image: url('/images/banner%20hero%201-2880w.jpg');
             background-size: cover;
             background-attachment: fixed;
             background-position: center center;
@@ -53,7 +53,7 @@
         /* Banner Parallax Styles */
         .banner-parallax {
             min-height: 70vh;
-            background-image: url('images/banner%20hero%202-2880w.jpg');
+            background-image: url('/images/banner%20hero%202-2880w.jpg');
             background-size: cover;
             background-attachment: fixed;
             background-position: center center;
@@ -90,16 +90,33 @@
     <nav id="mainNav" class="bg-white shadow-md sticky top-0 z-40 transition-all duration-300" aria-label="Navegação principal">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
-                <a href="index.html" class="flex items-center focus:outline-none">
+                <a href="/" class="flex items-center focus:outline-none">
                     <img src="images/logo-dexcarte.png" alt="Dexcarte Logo" class="h-16">
                 </a>
-                <div class="hidden lg:flex space-x-6">
-                    <a href="index.html" class="nav-link active text-gray-800 font-medium">Home</a>
-                    <a href="oqfazemos.html" class="nav-link text-gray-800 font-medium">O que Fazemos</a>
-                    <a href="catalogos.html" class="nav-link text-gray-800 font-medium">Catálogos</a>
-                    <a href="obras.html" class="nav-link text-gray-800 font-medium">Obras</a>
-                    <a href="pedido_orcamento.html" class="nav-link text-gray-800 font-medium">Pedido de Orçamentos</a>
-                    <a href="contactos.html" class="nav-link text-gray-800 font-medium">Contactos</a>
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="/" class="nav-link active text-gray-800 font-medium" data-i18n="nav-home">Home</a>
+                    <a href="/oqfazemos/" class="nav-link text-gray-800 font-medium" data-i18n="nav-oqfazemos">O que Fazemos</a>
+                    <a href="/catalogos/" class="nav-link text-gray-800 font-medium" data-i18n="nav-catalogos">Catálogos</a>
+                    <a href="/obras/" class="nav-link text-gray-800 font-medium" data-i18n="nav-obras">Obras</a>
+                    <a href="/pedido-orcamento/" class="nav-link text-gray-800 font-medium" data-i18n="nav-pedido">Pedido de Orçamentos</a>
+                    <a href="/contactos/" class="nav-link text-gray-800 font-medium" data-i18n="nav-contactos">Contactos</a>
+                    <div class="relative ml-auto" id="langDropdownWrap">
+                        <button id="langDropdownBtn" class="flex items-center gap-1.5 text-sm font-medium text-gray-700 hover:text-yellow-600 border border-gray-300 rounded-lg px-3 py-1.5 transition-colors focus:outline-none" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                            <span id="langDropdownLabel">PT</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div id="langDropdownMenu" class="hidden absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-xl border border-gray-100 py-1 z-50">
+                            <button data-lang="pt" class="lang-option flex items-center gap-3 w-full px-4 py-2.5 text-sm text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 transition-colors">
+                                <img src="https://flagcdn.com/w20/pt.png" alt="PT" class="w-5 h-auto rounded-sm">
+                                <span>Português</span>
+                            </button>
+                            <button data-lang="en" class="lang-option flex items-center gap-3 w-full px-4 py-2.5 text-sm text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 transition-colors">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="EN" class="w-5 h-auto rounded-sm">
+                                <span>English</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <div class="lg:hidden">
                     <button id="mobileMenuButton" class="mobile-menu-button text-gray-800 hover:text-yellow-600 focus:outline-none p-2" aria-expanded="false" aria-controls="mobileMenu">
@@ -114,12 +131,19 @@
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden lg:hidden bg-white shadow-xl border-t border-gray-100 fixed top-24 w-full z-30 transform transition-transform duration-300 origin-top -translate-y-2 opacity-0">
         <div class="container mx-auto px-6 py-4 flex flex-col space-y-2">
-            <a href="index.html" class="block py-3 text-lg text-yellow-600 font-medium border-b border-gray-50">Home</a>
-            <a href="oqfazemos.html" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50">O que Fazemos</a>
-            <a href="catalogos.html" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50">Catálogos</a>
-            <a href="obras.html" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50">Obras</a>
-            <a href="pedido_orcamento.html" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50">Pedido de Orçamentos</a>
-            <a href="contactos.html" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors">Contactos</a>
+            <a href="/" class="block py-3 text-lg text-yellow-600 font-medium border-b border-gray-50" data-i18n="nav-home">Home</a>
+            <a href="/oqfazemos/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50" data-i18n="nav-oqfazemos">O que Fazemos</a>
+            <a href="/catalogos/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50" data-i18n="nav-catalogos">Catálogos</a>
+            <a href="/obras/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50" data-i18n="nav-obras">Obras</a>
+            <a href="/pedido-orcamento/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50" data-i18n="nav-pedido">Pedido de Orçamentos</a>
+            <a href="/contactos/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors" data-i18n="nav-contactos">Contactos</a>
+            <div class="border-t border-gray-200 pt-3 mt-1">
+                <label class="text-sm text-gray-500 mb-1 block">Idioma / Language</label>
+                <select id="langMobileSelect" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-yellow-600">
+                    <option value="pt">🇵🇹 Português</option>
+                    <option value="en">🇬🇧 English</option>
+                </select>
+            </div>
         </div>
     </div>
 
@@ -128,10 +152,10 @@
         <section class="hero-banner-parallax relative overflow-hidden" aria-label="Banner principal">
             <div class="hero-banner-parallax__overlay absolute inset-0 bg-black bg-opacity-50"></div>
             <div class="hero-banner-parallax__inner relative z-10 container mx-auto px-4 py-24 text-center">
-                <h1 class="hero-banner-parallax__title text-4xl md:text-6xl font-bold text-white mb-6">Dexcarte-Comércio de Ferro Forjado e Construções</h1>
-                <p class="text-xl md:text-2xl text-white mb-8">Onde a resistência do ferro encontra a beleza do design</p>
-                <a href="contactos.html" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-4 px-8 rounded-lg transition duration-300">
-                    <span>Contacte-nos</span>
+                <h1 class="hero-banner-parallax__title text-4xl md:text-6xl font-bold text-white mb-6" data-i18n="index-hero-title">Dexcarte-Comércio de Ferro Forjado e Construções</h1>
+                <p class="text-xl md:text-2xl text-white mb-8" data-i18n="index-hero-sub">Onde a resistência do ferro encontra a beleza do design</p>
+                <a href="/contactos/" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-4 px-8 rounded-lg transition duration-300">
+                    <span data-i18n="index-hero-cta">Contacte-nos</span>
                     <span class="material-icons ml-2" aria-hidden="true">arrow_forward</span>
                 </a>
             </div>
@@ -141,17 +165,17 @@
         <section class="py-20 bg-white" aria-labelledby="services-heading">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-16">
-                    <h2 id="services-heading" class="text-3xl md:text-4xl font-bold mb-4">Nossos Serviços</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">Especializados em ferro forjado e construções metálicas, criamos soluções personalizadas e duradouras para o seu espaço.</p>
+                    <h2 id="services-heading" class="text-3xl md:text-4xl font-bold mb-4" data-i18n="index-services-title">Nossos Serviços</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="index-services-sub">Especializados em ferro forjado e construções metálicas, criamos soluções personalizadas e duradouras para o seu espaço.</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Service Card 1 -->
                     <div class="service-card bg-gray-50 rounded-lg overflow-hidden transition duration-300">
-                        <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/image+6-1920w.webp" alt="Portões e Gradeamentos" class="w-full h-48 object-cover lazy-load" loading="lazy">
+                        <img src="images/obra-porta-arco.jpeg" alt="Portões e Gradeamentos" class="w-full h-48 object-cover lazy-load" loading="lazy">
                         <div class="p-6">
-                            <h3 class="text-xl font-bold mb-3">Fabrico de Portões e Gradeamentos</h3>
-                            <p class="text-gray-600 mb-4">Estruturas robustas e elegantes, adaptadas ao estilo e necessidades de cada cliente.</p>
-                            <a href="oqfazemos.html" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700 transition-colors">
+                            <h3 class="text-xl font-bold mb-3" data-i18n="svc-gates-title">Fabrico de Portões e Gradeamentos</h3>
+                            <p class="text-gray-600 mb-4" data-i18n="svc-gates-desc">Estruturas robustas e elegantes, adaptadas ao estilo e necessidades de cada cliente.</p>
+                            <a href="/oqfazemos/" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700 transition-colors">
                                 <span>Leia Mais</span>
                                 <span class="material-icons ml-1 text-sm" aria-hidden="true">arrow_forward</span>
                             </a>
@@ -160,11 +184,11 @@
 
                     <!-- Service Card 2 -->
                     <div class="service-card bg-gray-50 rounded-lg overflow-hidden transition duration-300">
-                        <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/image+9-1920w.webp" alt="Escadas e Corrimões" class="w-full h-48 object-cover lazy-load" loading="lazy">
+                        <img src="images/obra-corrimao-forjado.jpeg" alt="Escadas e Corrimões" class="w-full h-48 object-cover lazy-load" loading="lazy">
                         <div class="p-6">
-                            <h3 class="text-xl font-bold mb-3">Escadas e Corrimões em Ferro</h3>
-                            <p class="text-gray-600 mb-4">Design seguro e sofisticado, ideal para interiores e exteriores.</p>
-                            <a href="oqfazemos.html" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700 transition-colors">
+                            <h3 class="text-xl font-bold mb-3" data-i18n="svc-stairs-title">Escadas e Corrimões em Ferro</h3>
+                            <p class="text-gray-600 mb-4" data-i18n="svc-stairs-desc">Design seguro e sofisticado, ideal para interiores e exteriores.</p>
+                            <a href="/oqfazemos/" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700 transition-colors">
                                 <span>Leia Mais</span>
                                 <span class="material-icons ml-1 text-sm" aria-hidden="true">arrow_forward</span>
                             </a>
@@ -173,11 +197,11 @@
 
                     <!-- Service Card 3 -->
                     <div class="service-card bg-gray-50 rounded-lg overflow-hidden transition duration-300">
-                        <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/image+2-1920w.webp" alt="Peças Artesanais" class="w-full h-48 object-cover lazy-load" loading="lazy">
+                        <img src="images/obra-capelinha.jpeg" alt="Peças Artesanais" class="w-full h-48 object-cover lazy-load" loading="lazy">
                         <div class="p-6">
-                            <h3 class="text-xl font-bold mb-3">Peças Artesanais em Ferro Forjado</h3>
-                            <p class="text-gray-600 mb-4">Criações únicas que valorizam qualquer espaço, com atenção ao detalhe e ao acabamento.</p>
-                            <a href="oqfazemos.html" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700 transition-colors">
+                            <h3 class="text-xl font-bold mb-3" data-i18n="svc-art-title">Peças Artesanais em Ferro Forjado</h3>
+                            <p class="text-gray-600 mb-4" data-i18n="svc-art-desc">Criações únicas que valorizam qualquer espaço, com atenção ao detalhe e ao acabamento.</p>
+                            <a href="/oqfazemos/" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700 transition-colors">
                                 <span>Leia Mais</span>
                                 <span class="material-icons ml-1 text-sm" aria-hidden="true">arrow_forward</span>
                             </a>
@@ -188,9 +212,9 @@
                     <div class="service-card bg-gray-50 rounded-lg overflow-hidden transition duration-300">
                         <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/IMAGE+1-1920w.webp" alt="Estruturas Metálicas" class="w-full h-48 object-cover lazy-load" loading="lazy">
                         <div class="p-6">
-                            <h3 class="text-xl font-bold mb-3">Estruturas Metálicas</h3>
-                            <p class="text-gray-600 mb-4">Projetos de pequeno e médio porte, concebidos com precisão e durabilidade.</p>
-                            <a href="oqfazemos.html" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700 transition-colors">
+                            <h3 class="text-xl font-bold mb-3" data-i18n="svc-struct-title">Estruturas Metálicas</h3>
+                            <p class="text-gray-600 mb-4" data-i18n="svc-struct-desc">Projetos de pequeno e médio porte, concebidos com precisão e durabilidade.</p>
+                            <a href="/oqfazemos/" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700 transition-colors">
                                 <span>Leia Mais</span>
                                 <span class="material-icons ml-1 text-sm" aria-hidden="true">arrow_forward</span>
                             </a>
@@ -206,11 +230,11 @@
                 <h2 id="cta-heading" class="text-3xl font-bold mb-6">Personalize o seu projeto connosco</h2>
                 <p class="text-xl mb-8 max-w-2xl mx-auto">Solicite o seu orçamento agora e dê vida às suas ideias com qualidade e profissionalismo.</p>
                 <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="pedido_orcamento.html" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                    <a href="/pedido-orcamento/" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
                         <span>Contacte-nos!</span>
                         <span class="material-icons ml-2" aria-hidden="true">arrow_forward</span>
                     </a>
-                    <a href="catalogos.html" class="inline-flex items-center border-2 border-yellow-600 text-yellow-600 hover:bg-yellow-600 hover:text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                    <a href="/catalogos/" class="inline-flex items-center border-2 border-yellow-600 text-yellow-600 hover:bg-yellow-600 hover:text-white font-bold py-3 px-8 rounded-lg transition duration-300">
                         <span>Ver Catálogos</span>
                         <span class="material-icons ml-2" aria-hidden="true">menu_book</span>
                     </a>
@@ -230,34 +254,34 @@
                         <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
                             <span class="material-icons text-yellow-600 text-3xl" aria-hidden="true">emoji_events</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Experiência Comprovada</h3>
-                        <p class="text-gray-600">Mais de 20 anos de excelência em ferro forjado e construções metálicas</p>
+                        <h3 class="text-xl font-bold mb-2" data-i18n="index-feat1-title">Experiência Comprovada</h3>
+                        <p class="text-gray-600" data-i18n="index-feat1-desc">Mais de 20 anos de excelência em ferro forjado e construções metálicas</p>
                     </div>
                     <div class="feature-card text-center">
                         <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
                             <span class="material-icons text-yellow-600 text-3xl" aria-hidden="true">star</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Qualidade e Personalização</h3>
-                        <p class="text-gray-600">Produtos feitos à medida, com materiais de alta qualidade.</p>
+                        <h3 class="text-xl font-bold mb-2" data-i18n="index-feat2-title">Qualidade e Personalização</h3>
+                        <p class="text-gray-600" data-i18n="index-feat2-desc">Produtos feitos à medida, com materiais de alta qualidade.</p>
                     </div>
                     <div class="feature-card text-center">
                         <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
                             <span class="material-icons text-yellow-600 text-3xl" aria-hidden="true">build</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Tradição e Inovação</h3>
-                        <p class="text-gray-600">Aliamos o artesanato tradicional a técnicas modernas.</p>
+                        <h3 class="text-xl font-bold mb-2" data-i18n="index-feat3-title">Tradição e Inovação</h3>
+                        <p class="text-gray-600" data-i18n="index-feat3-desc">Aliamos o artesanato tradicional a técnicas modernas.</p>
                     </div>
                     <div class="feature-card text-center">
                         <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
                             <span class="material-icons text-yellow-600 text-3xl" aria-hidden="true">schedule</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Compromisso e Confiança</h3>
-                        <p class="text-gray-600">Projetos entregues com rigor, pontualidade e atenção ao detalhe.</p>
+                        <h3 class="text-xl font-bold mb-2" data-i18n="index-feat4-title">Compromisso e Confiança</h3>
+                        <p class="text-gray-600" data-i18n="index-feat4-desc">Projetos entregues com rigor, pontualidade e atenção ao detalhe.</p>
                     </div>
                 </div>
                 <div class="text-center mt-12">
-                    <a href="oqfazemos.html" class="inline-flex items-center border-2 border-yellow-600 text-yellow-600 hover:bg-yellow-600 hover:text-white font-bold py-3 px-6 rounded-lg transition duration-300">
-                        <span>Saiba mais sobre nós</span>
+                    <a href="/oqfazemos/" class="inline-flex items-center border-2 border-yellow-600 text-yellow-600 hover:bg-yellow-600 hover:text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        <span data-i18n="index-about-link">Saiba mais sobre nós</span>
                         <span class="material-icons ml-2" aria-hidden="true">arrow_forward</span>
                     </a>
                 </div>
@@ -268,9 +292,9 @@
         <section class="banner-parallax relative overflow-hidden" aria-label="Banner sobre nossa expertise">
             <div class="banner-parallax__overlay absolute inset-0 bg-black bg-opacity-50"></div>
             <div class="banner-parallax__inner relative z-10 container mx-auto px-4 py-20 text-center">
-                <h2 class="banner-parallax__title text-4xl md:text-5xl font-bold text-white mb-6">A Arte do Ferro Forjado</h2>
-                <p class="text-xl md:text-2xl text-white max-w-3xl mx-auto mb-6">Tradição e inovação combinadas para criar peças únicas</p>
-                <p class="text-lg text-white max-w-2xl mx-auto opacity-90">Cada martelo, cada curva, cada detalhe é trabalhado com a maestria de quem domina esta arte há décadas</p>
+                <h2 class="banner-parallax__title text-4xl md:text-5xl font-bold text-white mb-6" data-i18n="index-banner-title">A Arte do Ferro Forjado</h2>
+                <p class="text-xl md:text-2xl text-white max-w-3xl mx-auto mb-6" data-i18n="index-banner-sub">Tradição e inovação combinadas para criar peças únicas</p>
+                <p class="text-lg text-white max-w-2xl mx-auto opacity-90" data-i18n="index-banner-desc">Cada martelo, cada curva, cada detalhe é trabalhado com a maestria de quem domina esta arte há décadas</p>
             </div>
         </section>
 
@@ -278,8 +302,8 @@
         <section class="py-20 bg-gray-100" aria-labelledby="gallery-heading">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-16">
-                    <h2 id="gallery-heading" class="text-3xl md:text-4xl font-bold mb-4">Alguns dos nossos projectos</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">Explore nossa galeria de trabalhos realizados e inspire-se para o seu próximo projeto.</p>
+                    <h2 id="gallery-heading" class="text-3xl md:text-4xl font-bold mb-4" data-i18n="index-gallery-title">Alguns dos nossos projectos</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="index-gallery-sub">Explore nossa galeria de trabalhos realizados e inspire-se para o seu próximo projeto.</p>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="gallery-item overflow-hidden rounded-lg shadow-md">
@@ -289,15 +313,15 @@
                         <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/image+5-1920w.webp" alt="Escada com corrimão em ferro" class="w-full h-full object-cover lazy-load" loading="lazy">
                     </div>
                     <div class="gallery-item overflow-hidden rounded-lg shadow-md">
-                        <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/image+4-1920w.webp" alt="Gradeamento decorativo" class="w-full h-full object-cover lazy-load" loading="lazy">
+                        <img src="images/obra-escada-exterior.jpeg" alt="Escada metálica exterior" class="w-full h-full object-cover lazy-load" loading="lazy">
                     </div>
                     <div class="gallery-item overflow-hidden rounded-lg shadow-md">
-                        <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/image+9-1920w.webp" alt="Estrutura metálica personalizada" class="w-full h-full object-cover lazy-load" loading="lazy">
+                        <img src="images/obra-capelinha.jpeg" alt="Expositor em vidro e metal" class="w-full h-full object-cover lazy-load" loading="lazy">
                     </div>
                 </div>
                 <div class="text-center mt-8">
-                    <a href="obras.html" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
-                        <span>Ver Mais</span>
+                    <a href="/obras/" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        <span data-i18n="index-gallery-link">Ver Mais</span>
                         <span class="material-icons ml-2" aria-hidden="true">arrow_forward</span>
                     </a>
                 </div>
@@ -307,7 +331,7 @@
         <!-- Contact CTA -->
         <section class="py-20 bg-yellow-600 text-white hero-pattern" aria-labelledby="contact-heading">
             <div class="container mx-auto px-4 text-center">
-                <h2 id="contact-heading" class="text-3xl md:text-4xl font-bold mb-6">Faz o teu pedido orçamento!</h2>
+                <h2 id="contact-heading" class="text-3xl md:text-4xl font-bold mb-6" data-i18n="index-cta-title">Faz o teu pedido orçamento!</h2>
                 <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-8">
                     <div class="flex items-center">
                         <span class="material-icons mr-2" aria-hidden="true">phone</span>
@@ -320,8 +344,8 @@
                         <a href="mailto:dexcarte@gmail.com" class="hover:underline">dexcarte@gmail.com</a>
                     </div>
                 </div>
-                <a href="pedido_orcamento.html" class="inline-flex items-center bg-white hover:bg-gray-100 text-yellow-600 font-bold py-3 px-8 rounded-lg transition duration-300">
-                    <span>Solicitar Orçamento</span>
+                <a href="/pedido-orcamento/" class="inline-flex items-center bg-white hover:bg-gray-100 text-yellow-600 font-bold py-3 px-8 rounded-lg transition duration-300">
+                    <span data-i18n="index-cta-link">Solicitar Orçamento</span>
                     <span class="material-icons ml-2" aria-hidden="true">arrow_forward</span>
                 </a>
             </div>
@@ -343,62 +367,66 @@
                             <img src="images/livro-reclamacoes.png" alt="Livro de Reclamações" class="h-6">
                         </a>
                     </div>
-                    <h3 class="text-lg font-bold mb-4">Serviços</h3>
+                    <h3 class="text-lg font-bold mb-4" data-i18n="footer-services">Serviços</h4>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="hover:text-yellow-400 transition-colors">Home</a></li>
-                        <li><a href="oqfazemos.html" class="hover:text-yellow-400 transition-colors">O que Fazemos</a></li>
-                        <li><a href="catalogos.html" class="hover:text-yellow-400 transition-colors">Catálogos</a></li>
-                        <li><a href="obras.html" class="hover:text-yellow-400 transition-colors">Obras</a></li>
-                        <li><a href="pedido_orcamento.html" class="hover:text-yellow-400 transition-colors">Pedido de Orçamentos</a></li>
-                        <li><a href="contactos.html" class="hover:text-yellow-400 transition-colors">Contactos</a></li>
+                        <li><a href="/" class="hover:text-yellow-400 transition-colors" data-i18n="nav-home">Home</a></li>
+                        <li><a href="/oqfazemos/" class="hover:text-yellow-400 transition-colors" data-i18n="nav-oqfazemos">O que Fazemos</a></li>
+                        <li><a href="/catalogos/" class="hover:text-yellow-400 transition-colors" data-i18n="nav-catalogos">Catálogos</a></li>
+                        <li><a href="/obras/" class="hover:text-yellow-400 transition-colors" data-i18n="nav-obras">Obras</a></li>
+                        <li><a href="/pedido-orcamento/" class="hover:text-yellow-400 transition-colors" data-i18n="nav-pedido">Pedido de Orçamentos</a></li>
+                        <li><a href="/contactos/" class="hover:text-yellow-400 transition-colors" data-i18n="nav-contactos">Contactos</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-bold mb-4">Onde estamos</h3>
+                    <h3 class="text-lg font-bold mb-4" data-i18n="footer-where">Onde estamos</h4>
                     <address class="not-italic mb-6">
                         <p class="mb-2">Quinta do Peixoto Carregado Park</p>
                         <p class="mb-2">Armazém a Torre</p>
                         <p class="mb-2">2580-512 Carregado</p>
-                        <a href="https://maps.app.goo.gl/mJbLnRNt2CqscvuL7" class="text-yellow-400 hover:underline">Ver no mapa</a>
+                        <a href="https://maps.app.goo.gl/mJbLnRNt2CqscvuL7" class="text-yellow-400 hover:underline" data-i18n="footer-map">Ver no mapa</a>
                     </address>
-                    <h4 class="text-lg font-bold mb-2">Horário:</h4>
-                    <p>Segunda a Sexta, das 09.00h às 13:00 e das 15:00 às 18.00h</p>
+                    <h4 class="text-lg font-bold mb-2" data-i18n="footer-hours-title">Horário:</h4>
+                    <p data-i18n="footer-hours">Segunda a Sexta, das 09.00h às 13:00 e das 15:00 às 18.00h</p>
                 </div>
                 <div>
-                    <h3 class="text-lg font-bold mb-4">Contacte-nos</h3>
-                    <p class="mb-4">Para dúvidas ou questões contacte-nos:</p>
+                    <h3 class="text-lg font-bold mb-4" data-i18n="footer-contact-us">Contacte-nos</h3>
+                    <p class="mb-4" data-i18n="footer-contact-desc">Para dúvidas ou questões contacte-nos:</p>
                     <div class="mb-4">
                         <a href="mailto:dexcarte@gmail.com" class="flex items-center hover:text-yellow-400 transition-colors mb-2">
                             <span class="material-icons mr-2" aria-hidden="true">mail</span> dexcarte@gmail.com
                         </a>
                     </div>
-                    <h4 class="font-bold mb-2">Fale connosco:</h4>
+                    <h4 class="font-bold mb-2" data-i18n="footer-talk-to-us">Fale connosco:</h4>
                     <div class="mb-2">
                         <a href="tel:263859145" class="flex items-center hover:text-yellow-400 transition-colors">
-                            <span class="material-icons mr-2" aria-hidden="true">phone</span> Telefone: 263859145 (Chamada para rede fixa nacional)
+                            <span class="material-icons mr-2" aria-hidden="true">phone</span>
+                            <span data-i18n="footer-phone">Telefone: 263859145 (Chamada para rede fixa nacional)</span>
                         </a>
                     </div>
                     <div class="mb-2">
                         <a href="tel:935770086" class="flex items-center hover:text-yellow-400 transition-colors">
-                            <span class="material-icons mr-2" aria-hidden="true">smartphone</span> Telemóvel: 935770086 (Chamada para rede móvel nacional)
+                            <span class="material-icons mr-2" aria-hidden="true">smartphone</span>
+                            <span data-i18n="footer-mobile">Telemóvel: 935770086 (Chamada para rede móvel nacional)</span>
                         </a>
                     </div>
                     <div class="mb-2">
-                        <span class="material-icons inline mr-2" aria-hidden="true">print</span> Fax: 219593691
+                        <span class="material-icons inline mr-2" aria-hidden="true">print</span>
+                        <span data-i18n="footer-fax">Fax: 219593691</span>
                     </div>
                 </div>
             </div>
             <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
                 <div class="mb-4">
-                    <a href="contactos.html" class="hover:text-yellow-400 mr-4 transition-colors">Política de Privacidade</a>
-                    <a href="contactos.html" class="hover:text-yellow-400 transition-colors">Política de Cookies</a>
+                    <a href="/contactos/" class="hover:text-yellow-400 mr-4 transition-colors" data-i18n="footer-privacy">Política de Privacidade</a>
+                    <a href="/contactos/" class="hover:text-yellow-400 transition-colors" data-i18n="footer-cookies">Política de Cookies</a>
                 </div>
                 <p>© 2025 All rights reserved to Dexcarte-Comércio de Ferro Forjado e Construções – Powered by Páginas Amarelas</p>
-                <p class="mt-4 text-yellow-400">O nosso website utiliza cookies para melhorar e personalizar a sua experiência de navegação. <a href="contactos.html" class="underline">Saiba mais</a></p>
+                <p class="mt-4 text-yellow-400" data-i18n="footer-cookie-notice">O nosso website utiliza cookies para melhorar e personalizar a sua experiência de navegação. <a href="/contactos/" class="underline" data-i18n="footer-cookie-learn">Saiba mais</a></p>
             </div>
         </div>
     </footer>
 
+    <script src="i18n.js"></script>
     <script src="main.js"></script>
     <script>
         // Initialize GSAP animations when resources are loaded

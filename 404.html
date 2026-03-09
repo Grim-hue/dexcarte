@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página não encontrada | Dexcarte</title>
+    <script>
+        (function () {
+            var path = window.location.pathname;
+            if (path.endsWith('.html')) {
+                var clean = path
+                    .replace('.html', '/')
+                    .replace('/pedido_orcamento/', '/pedido-orcamento/');
+                window.location.replace(clean);
+            } else {
+                window.location.replace('/');
+            }
+        })();
+    </script>
+</head>
+<body></body>
+</html>

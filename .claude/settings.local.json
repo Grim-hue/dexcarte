@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp oqfazemos.html oqfazemos/index.html)",
+      "Bash(cp catalogos.html catalogos/index.html)",
+      "Bash(cp obras.html obras/index.html)",
+      "Bash(cp pedido_orcamento.html pedido-orcamento/index.html)",
+      "Bash(cp contactos.html contactos/index.html)"
+    ]
+  }
+}

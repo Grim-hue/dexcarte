@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <title>Pedido de Orçamento | Dexcarte</title>
+    <meta name="description" content="Solicite um orçamento gratuito à Dexcarte para portões, gradeamentos, escadas, corrimões e estruturas metálicas em ferro forjado.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pedido de Orçamento | Dexcarte">
+    <meta property="og:description" content="Solicite um orçamento gratuito à Dexcarte para portões, gradeamentos, escadas e estruturas metálicas.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo-dexcarte.png">
+    <meta property="og:locale" content="pt_PT">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/site_favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/site_favicon.ico">
+    <link rel="apple-touch-icon" href="/images/logo-dexcarte.png">
+    <meta name="theme-color" content="#d97706">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav id="mainNav" class="bg-white shadow-md sticky top-0 z-40 transition-all duration-300" aria-label="Navegação principal">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="/" class="flex items-center focus:outline-none">
+                    <img src="/images/logo-dexcarte.png" alt="Dexcarte Logo" class="h-16">
+                </a>
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="/" class="nav-link text-gray-800 font-medium" data-i18n="nav-home">Home</a>
+                    <a href="/oqfazemos/" class="nav-link text-gray-800 font-medium" data-i18n="nav-oqfazemos">O que Fazemos</a>
+                    <a href="/catalogos/" class="nav-link text-gray-800 font-medium" data-i18n="nav-catalogos">Catálogos</a>
+                    <a href="/obras/" class="nav-link text-gray-800 font-medium" data-i18n="nav-obras">Obras</a>
+                    <a href="/pedido-orcamento/" class="nav-link active text-yellow-600 font-medium" data-i18n="nav-pedido">Pedido de Orçamentos</a>
+                    <a href="/contactos/" class="nav-link text-gray-800 font-medium" data-i18n="nav-contactos">Contactos</a>
+                    <div class="relative ml-auto" id="langDropdownWrap">
+                        <button id="langDropdownBtn" class="flex items-center gap-1.5 text-sm font-medium text-gray-700 hover:text-yellow-600 border border-gray-300 rounded-lg px-3 py-1.5 transition-colors focus:outline-none" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                            <span id="langDropdownLabel">PT</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div id="langDropdownMenu" class="hidden absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-xl border border-gray-100 py-1 z-50">
+                            <button data-lang="pt" class="lang-option flex items-center gap-3 w-full px-4 py-2.5 text-sm text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 transition-colors">
+                                <img src="https://flagcdn.com/w20/pt.png" alt="PT" class="w-5 h-auto rounded-sm">
+                                <span>Português</span>
+                            </button>
+                            <button data-lang="en" class="lang-option flex items-center gap-3 w-full px-4 py-2.5 text-sm text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 transition-colors">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="EN" class="w-5 h-auto rounded-sm">
+                                <span>English</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:hidden">
+                    <button id="mobileMenuButton" class="mobile-menu-button text-gray-800 hover:text-yellow-600 focus:outline-none p-2" aria-expanded="false" aria-controls="mobileMenu">
+                        <i data-feather="menu" aria-hidden="true" class="w-8 h-8"></i>
+                        <span class="sr-only">Abrir menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-white shadow-xl border-t border-gray-100 fixed top-24 w-full z-30 transform transition-transform duration-300 origin-top -translate-y-2 opacity-0">
+        <div class="container mx-auto px-6 py-4 flex flex-col space-y-2">
+            <a href="/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50" data-i18n="nav-home">Home</a>
+            <a href="/oqfazemos/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50" data-i18n="nav-oqfazemos">O que Fazemos</a>
+            <a href="/catalogos/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50" data-i18n="nav-catalogos">Catálogos</a>
+            <a href="/obras/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50" data-i18n="nav-obras">Obras</a>
+            <a href="/pedido-orcamento/" class="block py-3 text-lg text-yellow-600 font-medium border-b border-gray-50" data-i18n="nav-pedido">Pedido de Orçamentos</a>
+            <a href="/contactos/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors" data-i18n="nav-contactos">Contactos</a>
+            <div class="border-t border-gray-200 pt-3 mt-1">
+                <label class="text-sm text-gray-500 mb-1 block">Idioma / Language</label>
+                <select id="langMobileSelect" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-yellow-600">
+                    <option value="pt">🇵🇹 Português</option>
+                    <option value="en">🇬🇧 English</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-yellow-700 text-white py-20 hero-pattern">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4" data-i18n="ped-hero-title">Pedido de Orçamento</h1>
+            <p class="text-xl max-w-3xl mx-auto" data-i18n="ped-hero-sub">Preencha o formulário abaixo e entraremos em contacto consigo brevemente</p>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                <!-- Replace with your Access Key -->
+                <input type="hidden" name="access_key" value="fb7ee37e-ea66-4f44-9039-0db76d1ac969">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="nome" class="block text-gray-700 font-medium mb-2" data-i18n="ped-full-name">Nome Completo *</label>
+                        <input type="text" id="nome" name="nome" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 font-medium mb-2" data-i18n="ped-email">Email *</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="telefone" class="block text-gray-700 font-medium mb-2" data-i18n="ped-phone">Telefone *</label>
+                        <input type="tel" id="telefone" name="telefone" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                    </div>
+                    <div>
+                        <label for="localizacao" class="block text-gray-700 font-medium mb-2" data-i18n="ped-location">Localização *</label>
+                        <input type="text" id="localizacao" name="localizacao" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="servico" class="block text-gray-700 font-medium mb-2" data-i18n="ped-service-type">Tipo de Serviço *</label>
+                    <select id="servico" name="servico" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                        <option value="" data-i18n="ped-select-service">Selecione um serviço</option>
+                        <option value="portoes" data-i18n="ped-gates">Portões</option>
+                        <option value="gradeamentos" data-i18n="ped-railings">Gradeamentos</option>
+                        <option value="escadas" data-i18n="ped-stairs">Escadas</option>
+                        <option value="corrimoes" data-i18n="ped-handrails">Corrimões</option>
+                        <option value="estruturas" data-i18n="ped-structures">Estruturas Metálicas</option>
+                        <option value="outro" data-i18n="ped-other">Outro</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="mensagem" class="block text-gray-700 font-medium mb-2" data-i18n="ped-desc">Descrição do Projeto *</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
+                </div>
+                
+                <div>
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" required class="rounded border-gray-300 text-yellow-600 shadow-sm focus:border-yellow-300 focus:ring focus:ring-yellow-200 focus:ring-opacity-50">
+                        <span class="ml-2" data-i18n="ped-privacy">Aceito a política de privacidade *</span>
+                    </label>
+                </div>
+                
+                <div>
+                    <button type="submit" class="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-md transition duration-300" data-i18n="ped-submit">Enviar Pedido</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <img src="/images/logo-dexcarte.png" alt="Dexcarte Logo" class="h-16 mb-4">
+                    <div class="flex space-x-4 mb-6">
+                        <a href="https://facebook.com" target="_blank" class="hover:text-yellow-400"><i data-feather="facebook"></i></a>
+                        <a href="https://www.livroreclamacoes.pt" target="_blank"><img src="/images/livro-reclamacoes.png" alt="Livro de Reclamações" class="h-6"></a>
+                    </div>
+                    <h4 class="text-lg font-bold mb-4" data-i18n="footer-services">Serviços</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="hover:text-yellow-400" data-i18n="nav-home">Home</a></li>
+                        <li><a href="/oqfazemos/" class="hover:text-yellow-400" data-i18n="nav-oqfazemos">O que Fazemos</a></li>
+                        <li><a href="/catalogos/" class="hover:text-yellow-400" data-i18n="nav-catalogos">Catálogos</a></li>
+                        <li><a href="/obras/" class="hover:text-yellow-400" data-i18n="nav-obras">Obras</a></li>
+                        <li><a href="/pedido-orcamento/" class="hover:text-yellow-400" data-i18n="nav-pedido">Pedido de Orçamentos</a></li>
+                        <li><a href="/contactos/" class="hover:text-yellow-400" data-i18n="nav-contactos">Contactos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4" data-i18n="footer-where">Onde estamos</h4>
+                    <address class="not-italic mb-6">
+                        <p class="mb-2">Quinta do Peixoto Carregado Park</p>
+                        <p class="mb-2">Armazém a Torre</p>
+                        <p class="mb-2">2580-512 Carregado</p>
+                        <a href="https://maps.app.goo.gl/mJbLnRNt2CqscvuL7" class="text-yellow-400 hover:underline" data-i18n="footer-map">Ver no mapa</a>
+                    </address>
+                    <h4 class="text-lg font-bold mb-2" data-i18n="footer-hours-title">Horário:</h4>
+                    <p data-i18n="footer-hours">Segunda a Sexta, das 09.00h às 13:00 e das 15:00 às 18.00h</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4" data-i18n="footer-contact-us">Contacte-nos</h4>
+                    <p class="mb-4" data-i18n="footer-contact-desc">Para dúvidas ou questões contacte-nos:</p>
+                    <div class="mb-4">
+                        <a href="mailto:dexcarte@gmail.com" class="flex items-center hover:text-yellow-400 mb-2">
+                            <i data-feather="mail" class="mr-2"></i> dexcarte@gmail.com
+                        </a>
+                    </div>
+                    <h5 class="font-bold mb-2" data-i18n="footer-talk-to-us">Fale connosco:</h5>
+                    <div class="mb-2">
+                        <a href="tel:263859145" class="flex items-center hover:text-yellow-400">
+                            <i data-feather="phone" class="mr-2"></i>
+                            <span data-i18n="footer-phone">Telefone: 263859145 (Chamada para rede fixa nacional)</span>
+                        </a>
+                    </div>
+                    <div class="mb-2">
+                        <a href="tel:935770086" class="flex items-center hover:text-yellow-400">
+                            <i data-feather="smartphone" class="mr-2"></i>
+                            <span data-i18n="footer-mobile">Telemóvel: 935770086 (Chamada para rede móvel nacional)</span>
+                        </a>
+                    </div>
+                    <div class="mb-2">
+                        <i data-feather="printer" class="inline mr-2"></i>
+                        <span data-i18n="footer-fax">Fax: 219593691</span>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+                <div class="mb-4">
+                    <a href="#" class="hover:text-yellow-400 mr-4" data-i18n="footer-privacy">Política de Privacidade</a>
+                    <a href="#" class="hover:text-yellow-400" data-i18n="footer-cookies">Política de Cookies</a>
+                </div>
+                <p>© 2025 All rights reserved to Dexcarte-Comércio de Ferro Forjado e Construções – Powered by Páginas Amarelas</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/i18n.js"></script>
+    <script src="/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <title>O que Fazemos | Dexcarte</title>
+    <meta name="description" content="Conheça os serviços da Dexcarte: portões, gradeamentos, escadas, corrimões, peças artesanais e estruturas metálicas em ferro forjado.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="O que Fazemos | Dexcarte">
+    <meta property="og:description" content="Conheça os serviços da Dexcarte: portões, gradeamentos, escadas, corrimões, peças artesanais e estruturas metálicas em ferro forjado.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo-dexcarte.png">
+    <meta property="og:locale" content="pt_PT">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/site_favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/site_favicon.ico">
+    <link rel="apple-touch-icon" href="/images/logo-dexcarte.png">
+    <meta name="theme-color" content="#d97706">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- GSAP and ScrollTrigger (deferred) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav id="mainNav" class="bg-white shadow-md sticky top-0 z-40 transition-all duration-300" aria-label="Navegação principal">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="/" class="flex items-center focus:outline-none">
+                    <img src="/images/logo-dexcarte.png" alt="Dexcarte Logo" class="h-16">
+                </a>
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="/" class="nav-link text-gray-800 font-medium" data-i18n="nav-home">Home</a>
+                    <a href="/oqfazemos/" class="nav-link active text-yellow-600 font-medium" data-i18n="nav-oqfazemos">O que Fazemos</a>
+                    <a href="/catalogos/" class="nav-link text-gray-800 font-medium" data-i18n="nav-catalogos">Catálogos</a>
+                    <a href="/obras/" class="nav-link text-gray-800 font-medium" data-i18n="nav-obras">Obras</a>
+                    <a href="/pedido-orcamento/" class="nav-link text-gray-800 font-medium" data-i18n="nav-pedido">Pedido de Orçamentos</a>
+                    <a href="/contactos/" class="nav-link text-gray-800 font-medium" data-i18n="nav-contactos">Contactos</a>
+                    <div class="relative ml-auto" id="langDropdownWrap">
+                        <button id="langDropdownBtn" class="flex items-center gap-1.5 text-sm font-medium text-gray-700 hover:text-yellow-600 border border-gray-300 rounded-lg px-3 py-1.5 transition-colors focus:outline-none" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                            <span id="langDropdownLabel">PT</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div id="langDropdownMenu" class="hidden absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-xl border border-gray-100 py-1 z-50">
+                            <button data-lang="pt" class="lang-option flex items-center gap-3 w-full px-4 py-2.5 text-sm text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 transition-colors">
+                                <img src="https://flagcdn.com/w20/pt.png" alt="PT" class="w-5 h-auto rounded-sm">
+                                <span>Português</span>
+                            </button>
+                            <button data-lang="en" class="lang-option flex items-center gap-3 w-full px-4 py-2.5 text-sm text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 transition-colors">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="EN" class="w-5 h-auto rounded-sm">
+                                <span>English</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:hidden">
+                    <button id="mobileMenuButton" class="mobile-menu-button text-gray-800 hover:text-yellow-600 focus:outline-none p-2" aria-expanded="false" aria-controls="mobileMenu">
+                        <i data-feather="menu" aria-hidden="true" class="w-8 h-8"></i>
+                        <span class="sr-only">Abrir menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-white shadow-xl border-t border-gray-100 fixed top-24 w-full z-30 transform transition-transform duration-300 origin-top -translate-y-2 opacity-0">
+        <div class="container mx-auto px-6 py-4 flex flex-col space-y-2">
+            <a href="/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50" data-i18n="nav-home">Home</a>
+            <a href="/oqfazemos/" class="block py-3 text-lg text-yellow-600 font-medium border-b border-gray-50" data-i18n="nav-oqfazemos">O que Fazemos</a>
+            <a href="/catalogos/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50" data-i18n="nav-catalogos">Catálogos</a>
+            <a href="/obras/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50" data-i18n="nav-obras">Obras</a>
+            <a href="/pedido-orcamento/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50" data-i18n="nav-pedido">Pedido de Orçamentos</a>
+            <a href="/contactos/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors" data-i18n="nav-contactos">Contactos</a>
+            <div class="border-t border-gray-200 pt-3 mt-1">
+                <label class="text-sm text-gray-500 mb-1 block">Idioma / Language</label>
+                <select id="langMobileSelect" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-yellow-600">
+                    <option value="pt">🇵🇹 Português</option>
+                    <option value="en">🇬🇧 English</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-yellow-700 text-white py-20 hero-pattern">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6" data-i18n="oqf-hero-title">O Que Fazemos</h1>
+                <p class="text-xl mb-8" data-i18n="oqf-hero-sub">Especializados em ferro forjado e construções metálicas, criamos soluções personalizadas e duradouras para o seu espaço.</p>
+                <a href="#services" class="inline-flex items-center bg-white hover:bg-gray-100 text-yellow-700 font-bold py-3 px-6 rounded-lg transition duration-300">
+                    <span data-i18n="oqf-hero-btn">Conheça nossos serviços</span>
+                    <i data-feather="arrow-down" class="ml-2 w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 id="services-heading" class="text-3xl md:text-4xl font-bold mb-4" data-i18n="oqf-services-title">Nossos Serviços</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="oqf-services-sub">Combinamos tradição artesanal com técnicas modernas para criar peças únicas em ferro forjado e estruturas metálicas.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Service 1 -->
+                <div class="service-card bg-gray-50 p-8 rounded-lg">
+                    <div class="flex items-start mb-6">
+                        <div class="bg-yellow-100 p-3 rounded-lg mr-4">
+                            <i data-feather="grid" class="text-yellow-600 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold" data-i18n="oqf-gates-title">Portões e Gradeamentos</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6" data-i18n="oqf-gates-desc">Fabricamos portões e gradeamentos em ferro forjado, combinando segurança e estética. Desde modelos clássicos a designs contemporâneos, todos são personalizados às necessidades do cliente.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700" data-i18n="oqf-gates-li1">Portões de entrada e interiores</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700" data-i18n="oqf-gates-li2">Gradeamentos para varandas e escadas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700" data-i18n="oqf-gates-li3">Sistemas automáticos e manuais</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-gray-50 p-8 rounded-lg">
+                    <div class="flex items-start mb-6">
+                        <div class="bg-yellow-100 p-3 rounded-lg mr-4">
+                            <i data-feather="layers" class="text-yellow-600 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold" data-i18n="oqf-stairs-title">Escadas e Corrimões</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6" data-i18n="oqf-stairs-desc">Criamos escadas e corrimões em ferro que combinam funcionalidade e design. Soluções seguras e elegantes para espaços residenciais e comerciais.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700" data-i18n="oqf-stairs-li1">Escadas em ferro inteiras</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700" data-i18n="oqf-stairs-li2">Corrimões interiores e exteriores</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700" data-i18n="oqf-stairs-li3">Designs personalizados</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-gray-50 p-8 rounded-lg">
+                    <div class="flex items-start mb-6">
+                        <div class="bg-yellow-100 p-3 rounded-lg mr-4">
+                            <i data-feather="tool" class="text-yellow-600 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold" data-i18n="oqf-art-title">Peças Artesanais</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6" data-i18n="oqf-art-desc">Peças únicas em ferro forjado criadas por nossos artesãos especializados. Cada peça é trabalhada manualmente com atenção aos detalhes.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700" data-i18n="oqf-art-li1">Mobiliário urbano e decorativo</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700" data-i18n="oqf-art-li2">Elementos arquitetônicos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700" data-i18n="oqf-art-li3">Peças sob encomenda</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card bg-gray-50 p-8 rounded-lg">
+                    <div class="flex items-start mb-6">
+                        <div class="bg-yellow-100 p-3 rounded-lg mr-4">
+                            <i data-feather="box" class="text-yellow-600 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold" data-i18n="oqf-struct-title">Estruturas Metálicas</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6" data-i18n="oqf-struct-desc">Projetamos e construímos estruturas metálicas para diversos fins, desde pequenos projetos residenciais a médias construções comerciais.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700" data-i18n="oqf-struct-li1">Coberturas e toldos metálicos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700" data-i18n="oqf-struct-li2">Estruturas para armazéns e pavilhões</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-yellow-600 mr-3 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700" data-i18n="oqf-struct-li3">Revestimentos e proteções</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materials Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 id="materials-heading" class="text-3xl md:text-4xl font-bold mb-4" data-i18n="oqf-mat-title">Materiais que Trabalhamos</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="oqf-mat-sub">Utilizamos materiais de alta qualidade para garantir durabilidade e excelência em todos os nossos projetos.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="material-card bg-white p-8 rounded-lg shadow-sm text-center">
+                    <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="box" class="text-yellow-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="oqf-mat1-title">Ferro Forjado</h3>
+                    <p class="text-gray-600" data-i18n="oqf-mat1-desc">Material tradicional e durável, ideal para peças artesanais e estruturas que exigem resistência e acabamento manual.</p>
+                </div>
+                <div class="material-card bg-white p-8 rounded-lg shadow-sm text-center">
+                    <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="box" class="text-yellow-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="oqf-mat2-title">Aço Inoxidável</h3>
+                    <p class="text-gray-600" data-i18n="oqf-mat2-desc">Para projetos que exigem alta resistência à corrosão, com acabamento moderno e minimalista.</p>
+                </div>
+                <div class="material-card bg-white p-8 rounded-lg shadow-sm text-center">
+                    <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="box" class="text-yellow-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="oqf-mat3-title">Alumínio</h3>
+                    <p class="text-gray-600" data-i18n="oqf-mat3-desc">Material leve e resistente, ideal para estruturas que necessitam de menor peso sem comprometer a durabilidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 id="process-heading" class="text-3xl md:text-4xl font-bold mb-4" data-i18n="oqf-process-title">Nosso Processo de Trabalho</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="oqf-process-sub">Um processo cuidadoso e meticuloso para garantir a qualidade em cada etapa do projeto.</p>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="process-step text-center mb-10 md:mb-0 flex-1">
+                    <div class="bg-yellow-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <span class="text-yellow-600 font-bold text-xl">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="oqf-step1-title">Consulta</h3>
+                    <p class="text-gray-600 max-w-xs mx-auto" data-i18n="oqf-step1-desc">Análise das necessidades e preferências do cliente para entender o projeto.</p>
+                </div>
+                <div class="process-step text-center mb-10 md:mb-0 flex-1">
+                    <div class="bg-yellow-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <span class="text-yellow-600 font-bold text-xl">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="oqf-step2-title">Projeto</h3>
+                    <p class="text-gray-600 max-w-xs mx-auto" data-i18n="oqf-step2-desc">Criação de desenhos técnicos e visualizações para aprovação.</p>
+                </div>
+                <div class="process-step text-center mb-10 md:mb-0 flex-1">
+                    <div class="bg-yellow-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <span class="text-yellow-600 font-bold text-xl">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="oqf-step3-title">Fabricação</h3>
+                    <p class="text-gray-600 max-w-xs mx-auto" data-i18n="oqf-step3-desc">Execução artesanal com materiais de alta qualidade e técnicas precisas.</p>
+                </div>
+                <div class="process-step text-center flex-1">
+                    <div class="bg-yellow-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <span class="text-yellow-600 font-bold text-xl">4</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="oqf-step4-title">Instalação</h3>
+                    <p class="text-gray-600 max-w-xs mx-auto" data-i18n="oqf-step4-desc">Montagem profissional no local, garantindo perfeito acabamento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-yellow-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 id="oqf-cta-heading" class="text-3xl md:text-4xl font-bold mb-6" data-i18n="oqf-cta-title">Interessado nos nossos serviços?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto" data-i18n="oqf-cta-sub">Solicite um orçamento sem compromisso e deixe-nos materializar as suas ideias.</p>
+            <a href="/pedido-orcamento/" class="inline-flex items-center bg-white hover:bg-gray-100 text-yellow-600 font-bold py-4 px-8 rounded-lg transition duration-300">
+                <span data-i18n="oqf-cta-btn">Pedir Orçamento</span>
+                <i data-feather="arrow-right" class="ml-2 w-5 h-5"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <img src="/images/logo-dexcarte.png" alt="Dexcarte Logo" class="h-16 mb-4">
+                    <div class="flex space-x-4 mb-6">
+                        <a href="https://facebook.com" target="_blank" class="hover:text-yellow-400"><i data-feather="facebook"></i></a>
+                        <a href="https://www.livroreclamacoes.pt" target="_blank"><img src="/images/livro-reclamacoes.png" alt="Livro de Reclamações" class="h-6"></a>
+                    </div>
+                    <h4 class="text-lg font-bold mb-4" data-i18n="footer-services">Serviços</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="hover:text-yellow-400" data-i18n="nav-home">Home</a></li>
+                        <li><a href="/oqfazemos/" class="hover:text-yellow-400" data-i18n="nav-oqfazemos">O que Fazemos</a></li>
+                        <li><a href="/catalogos/" class="hover:text-yellow-400" data-i18n="nav-catalogos">Catálogos</a></li>
+                        <li><a href="/obras/" class="hover:text-yellow-400" data-i18n="nav-obras">Obras</a></li>
+                        <li><a href="/pedido-orcamento/" class="hover:text-yellow-400" data-i18n="nav-pedido">Pedido de Orçamentos</a></li>
+                        <li><a href="/contactos/" class="hover:text-yellow-400" data-i18n="nav-contactos">Contactos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4" data-i18n="footer-where">Onde estamos</h4>
+                    <address class="not-italic mb-6">
+                        <p class="mb-2">Quinta do Peixoto Carregado Park</p>
+                        <p class="mb-2">Armazém a Torre</p>
+                        <p class="mb-2">2580-512 Carregado</p>
+                        <a href="https://maps.app.goo.gl/mJbLnRNt2CqscvuL7" class="text-yellow-400 hover:underline" data-i18n="footer-map">Ver no mapa</a>
+                    </address>
+                    <h4 class="text-lg font-bold mb-2" data-i18n="footer-hours-title">Horário:</h4>
+                    <p data-i18n="footer-hours">Segunda a Sexta, das 09.00h às 13:00 e das 15:00 às 18.00h</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4" data-i18n="footer-contact-us">Contacte-nos</h4>
+                    <p class="mb-4" data-i18n="footer-contact-desc">Para dúvidas ou questões contacte-nos:</p>
+                    <div class="mb-4">
+                        <a href="mailto:dexcarte@gmail.com" class="flex items-center hover:text-yellow-400 mb-2">
+                            <i data-feather="mail" class="mr-2"></i> dexcarte@gmail.com
+                        </a>
+                    </div>
+                    <h5 class="font-bold mb-2" data-i18n="footer-talk-to-us">Fale connosco:</h5>
+                    <div class="mb-2">
+                        <a href="tel:263859145" class="flex items-center hover:text-yellow-400">
+                            <i data-feather="phone" class="mr-2"></i>
+                            <span data-i18n="footer-phone">Telefone: 263859145 (Chamada para rede fixa nacional)</span>
+                        </a>
+                    </div>
+                    <div class="mb-2">
+                        <a href="tel:935770086" class="flex items-center hover:text-yellow-400">
+                            <i data-feather="smartphone" class="mr-2"></i>
+                            <span data-i18n="footer-mobile">Telemóvel: 935770086 (Chamada para rede móvel nacional)</span>
+                        </a>
+                    </div>
+                    <div class="mb-2">
+                        <i data-feather="printer" class="inline mr-2"></i>
+                        <span data-i18n="footer-fax">Fax: 219593691</span>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+                <div class="mb-4">
+                    <a href="/contactos/" class="hover:text-yellow-400 mr-4" data-i18n="footer-privacy">Política de Privacidade</a>
+                    <a href="/contactos/" class="hover:text-yellow-400" data-i18n="footer-cookies">Política de Cookies</a>
+                </div>
+                <p>© 2025 All rights reserved to Dexcarte-Comércio de Ferro Forjado e Construções – Powered by Páginas Amarelas</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/i18n.js"></script>
+    <script src="/main.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Services heading + sub
+                gsap.from("#services-heading", { scrollTrigger: { trigger: "#services-heading", start: "top 85%", toggleActions: "play none none none" }, opacity: 0, y: 30, duration: 0.8, ease: "power2.out" });
+                gsap.from("#services-heading + p", { scrollTrigger: { trigger: "#services-heading", start: "top 85%", toggleActions: "play none none none" }, opacity: 0, y: 20, duration: 0.8, delay: 0.2, ease: "power2.out" });
+
+                // Service cards stagger
+                gsap.utils.toArray(".service-card").forEach((item, index) => {
+                    gsap.from(item, { scrollTrigger: { trigger: item, start: "top 85%", toggleActions: "play none none none" }, opacity: 0, y: 30, duration: 0.6, delay: index * 0.1, ease: "power2.out" });
+                });
+
+                // Materials heading + sub
+                gsap.from("#materials-heading", { scrollTrigger: { trigger: "#materials-heading", start: "top 85%", toggleActions: "play none none none" }, opacity: 0, y: 30, duration: 0.8, ease: "power2.out" });
+                gsap.from("#materials-heading + p", { scrollTrigger: { trigger: "#materials-heading", start: "top 85%", toggleActions: "play none none none" }, opacity: 0, y: 20, duration: 0.8, delay: 0.2, ease: "power2.out" });
+
+                // Material cards stagger
+                gsap.utils.toArray(".material-card").forEach((item, index) => {
+                    gsap.from(item, { scrollTrigger: { trigger: item, start: "top 85%", toggleActions: "play none none none" }, opacity: 0, y: 30, duration: 0.6, delay: index * 0.1, ease: "power2.out" });
+                });
+
+                // Process heading + sub
+                gsap.from("#process-heading", { scrollTrigger: { trigger: "#process-heading", start: "top 85%", toggleActions: "play none none none" }, opacity: 0, y: 30, duration: 0.8, ease: "power2.out" });
+                gsap.from("#process-heading + p", { scrollTrigger: { trigger: "#process-heading", start: "top 85%", toggleActions: "play none none none" }, opacity: 0, y: 20, duration: 0.8, delay: 0.2, ease: "power2.out" });
+
+                // Process steps stagger
+                gsap.utils.toArray(".process-step").forEach((item, index) => {
+                    gsap.from(item, { scrollTrigger: { trigger: item, start: "top 85%", toggleActions: "play none none none" }, opacity: 0, y: 30, duration: 0.6, delay: index * 0.1, ease: "power2.out" });
+                });
+
+                // CTA section stagger
+                gsap.from("#oqf-cta-heading", { scrollTrigger: { trigger: "#oqf-cta-heading", start: "top 85%", toggleActions: "play none none none" }, opacity: 0, y: 30, duration: 0.8, ease: "power2.out" });
+                gsap.from("#oqf-cta-heading + p", { scrollTrigger: { trigger: "#oqf-cta-heading", start: "top 85%", toggleActions: "play none none none" }, opacity: 0, y: 20, duration: 0.8, delay: 0.2, ease: "power2.out" });
+                gsap.from("#oqf-cta-heading + p + a", { scrollTrigger: { trigger: "#oqf-cta-heading", start: "top 85%", toggleActions: "play none none none" }, opacity: 0, y: 20, duration: 0.8, delay: 0.4, ease: "power2.out" });
+            }
+        });
+    </script>
+</body>
+</html>
