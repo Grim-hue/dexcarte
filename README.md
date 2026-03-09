@@ -15,6 +15,7 @@ The project is built to be hosted on GitHub Pages.
 - **Portfolio Showcase**: Image gallery of completed projects and works.
 - **Responsive Design**: Mobile-first architecture using Tailwind CSS.
 - **Modern Typography**: Utilizing `Playfair Display` for elegant headings and `Inter` for clean body text.
+- **Internationalization (i18n)**: Seamless translation between PT and EN.
 - **Functional Contact & Quote Forms**: Fully working contact and budget request forms powered by Web3Forms.
 
 ---
@@ -22,7 +23,7 @@ The project is built to be hosted on GitHub Pages.
 ## Technology Stack
 
 - **HTML5 & CSS3**
-- **JavaScript** (Vanilla)
+- **JavaScript** (Vanilla script for logic and `i18n.js` for localization)
 - **Tailwind CSS** (via CDN for rapid styling)
 - **Web3Forms** (Serverless form handling)
 - **Feather Icons & Material Icons**
@@ -38,7 +39,7 @@ The site uses [Web3Forms](https://web3forms.com/) to handle contact form submiss
 
 ### How it works:
 
-1. When a user submits the form on the `contactos.html` or `pedido_orcamento.html` page, an HTTP POST request is sent directly to the Web3Forms API.
+1. When a user submits the form on the `contactos/` or `pedido-orcamento/` page, an HTTP POST request is sent directly to the Web3Forms API.
 2. Web3Forms captures the data and instantly emails it to the configured email address (`dexcarte@gmail.com`).
 3. To change the receiving email address, you must generate a new Access Key on the Web3Forms website and update the `access_key` hidden input field in both HTML files.
 
