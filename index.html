@@ -78,71 +78,7 @@
             font-size: clamp(2rem, 4vw + 1rem, 4rem);
         }
         
-        /* Glass Navigation Bar */
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(64px);
-            -webkit-backdrop-filter: blur(64px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .glass-nav.scrolled {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(64px);
-            -webkit-backdrop-filter: blur(64px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .glass-nav .nav-link {
-            outline: none;
-            border: none;
-        }
-        
-        .glass-nav .nav-link:focus {
-            outline: none;
-            border: none;
-            box-shadow: none;
-        }
-        
-        .glass-nav.scrolled .nav-link {
-            color: var(--text-dark);
-        }
-        
-        .glass-nav.scrolled .nav-link.active {
-            color: var(--primary-color);
-        }
-        
-        .glass-nav.scrolled .mobile-menu-button {
-            color: var(--text-dark);
-        }
-        
-        /* Mobile Menu Glass Effect */
-        .mobile-glass-menu {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(64px);
-            -webkit-backdrop-filter: blur(64px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Disable parallax on mobile for better performance */
-        @media (max-width: 768px) {
-            .hero-banner-parallax,
-            .banner-parallax {
-                background-attachment: scroll;
-                min-height: 80vh;
-            }
-            
-            .banner-parallax {
-                min-height: 50vh;
-            }
-            
-            .glass-nav {
-                background: rgba(255, 255, 255, 0.95);
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-            }
-        }
+        /* Remove glass-nav and banner-parallax overrides from this section */
         
         /* Component Styles */
         .service-card {
@@ -253,23 +189,23 @@
     </div>
 
     <!-- Navigation -->
-    <nav id="mainNav" class="glass-nav fixed top-0 left-0 right-0 z-40" aria-label="Navegação principal">
+    <nav id="mainNav" class="bg-white shadow-md sticky top-0 z-40 transition-all duration-300" aria-label="Navegação principal">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
+                <a href="index.html" class="flex items-center focus:outline-none">
                     <img src="images/logo-dexcarte.png" alt="Dexcarte Logo" class="h-16">
-                </div>
+                </a>
                 <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="nav-link active text-white font-medium">Home</a>
-                    <a href="oqfazemos.html" class="nav-link text-white font-medium">O que Fazemos</a>
-                    <a href="catalogos.html" class="nav-link text-white font-medium">Catálogos</a>
-                    <a href="obras.html" class="nav-link text-white font-medium">Obras</a>
-                    <a href="pedido_orcamento.html" class="nav-link text-white font-medium">Pedido de Orçamentos</a>
-                    <a href="contactos.html" class="nav-link text-white font-medium">Contactos</a>
+                    <a href="index.html" class="nav-link active text-gray-800 font-medium">Home</a>
+                    <a href="oqfazemos.html" class="nav-link text-gray-800 font-medium">O que Fazemos</a>
+                    <a href="catalogos.html" class="nav-link text-gray-800 font-medium">Catálogos</a>
+                    <a href="obras.html" class="nav-link text-gray-800 font-medium">Obras</a>
+                    <a href="pedido_orcamento.html" class="nav-link text-gray-800 font-medium">Pedido de Orçamentos</a>
+                    <a href="contactos.html" class="nav-link text-gray-800 font-medium">Contactos</a>
                 </div>
                 <div class="md:hidden">
-                    <button id="mobileMenuButton" class="mobile-menu-button text-white focus:outline-none" aria-expanded="false" aria-controls="mobileMenu">
-                        <span class="material-icons" aria-hidden="true">menu</span>
+                    <button id="mobileMenuButton" class="mobile-menu-button text-gray-800 hover:text-yellow-600 focus:outline-none p-2" aria-expanded="false" aria-controls="mobileMenu">
+                        <span class="material-icons text-3xl" aria-hidden="true">menu</span>
                         <span class="sr-only">Abrir menu</span>
                     </button>
                 </div>
@@ -278,14 +214,15 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden md:hidden mobile-glass-menu shadow-lg absolute w-full z-30 transform transition-transform duration-300 -translate-y-full">
-        <div class="container mx-auto px-4 py-2">
-            <a href="index.html" class="block py-2 text-yellow-600 font-medium">Home</a>
-            <a href="oqfazemos.html" class="block py-2 text-gray-800 hover:text-yellow-600 transition-colors">O que Fazemos</a>
-            <a href="catalogos.html" class="block py-2 text-gray-800 hover:text-yellow-600 transition-colors">Catálogos</a>
-            <a href="obras.html" class="block py-2 text-gray-800 hover:text-yellow-600 transition-colors">Obras</a>
-            <a href="pedido_orcamento.html" class="block py-2 text-gray-800 hover:text-yellow-600 transition-colors">Pedido de Orçamentos</a>
-            <a href="contactos.html" class="block py-2 text-gray-800 hover:text-yellow-600 transition-colors">Contactos</a>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white shadow-xl border-t border-gray-100 absolute w-full z-30 transform transition-transform duration-300 origin-top -translate-y-2 opacity-0">
+        <div class="container mx-auto px-6 py-4 flex flex-col space-y-2">
+            <a href="index.html" class="block py-3 text-lg text-yellow-600 font-medium border-b border-gray-50">Home</a>
+            <a href="oqfazemos.html" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50">O que Fazemos</a>
+            <a href="catalogos.html" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50">Catálogos</a>
+            <a href="obras.html" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50">Obras</a>
+            <a href="pedido_orcamento.html" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50">Pedido de Orçamentos</a>
+            <a href="contactos.html" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors">Contactos</a>
         </div>
     </div>
 
@@ -569,16 +506,34 @@
             mobileMenuButton.addEventListener('click', () => {
                 const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
                 mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
-                mobileMenu.classList.toggle('hidden');
-                mobileMenu.classList.toggle('-translate-y-full');
+                if (mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.remove('hidden');
+                    // Small delay to allow display block to apply before animating opacity/transform
+                    setTimeout(() => {
+                        mobileMenu.classList.remove('-translate-y-2', 'opacity-0');
+                        mobileMenu.classList.add('translate-y-0', 'opacity-100');
+                    }, 10);
+                } else {
+                    mobileMenu.classList.remove('translate-y-0', 'opacity-100');
+                    mobileMenu.classList.add('-translate-y-2', 'opacity-0');
+                    // Wait for transition before hiding
+                    setTimeout(() => {
+                        mobileMenu.classList.add('hidden');
+                    }, 300);
+                }
             });
             
             // Close mobile menu when clicking outside
             document.addEventListener('click', (e) => {
                 if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.add('-translate-y-full');
-                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.remove('translate-y-0', 'opacity-100');
+                        mobileMenu.classList.add('-translate-y-2', 'opacity-0');
+                        setTimeout(() => {
+                            mobileMenu.classList.add('hidden');
+                        }, 300);
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
                 }
             });
             
@@ -612,16 +567,7 @@
                 }, 300);
             });
             
-            // Scroll effect for glass navigation
-            const mainNav = document.getElementById('mainNav');
-            
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 100) {
-                    mainNav.classList.add('scrolled');
-                } else {
-                    mainNav.classList.remove('scrolled');
-                }
-            });
+            // Removed scroll effect for glass navigation as it is now solid white and sticky
             
             // Lazy loading for images
             const lazyImages = document.querySelectorAll('.lazy-load');

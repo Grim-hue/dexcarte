@@ -117,41 +117,7 @@
 
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-40">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <a href="index.html" class="flex items-center focus:outline-none">
-                    <img src="images/logo-dexcarte.png" alt="Dexcarte Logo" class="h-16">
-                </a>
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="nav-link text-gray-800 font-medium">Home</a>
-                    <a href="oqfazemos.html" class="nav-link text-gray-800 font-medium">O que Fazemos</a>
-                    <a href="catalogos.html" class="nav-link text-gray-800 font-medium">Catálogos</a>
-                    <a href="obras.html" class="nav-link active text-yellow-600 font-medium">Obras</a>
-                    <a href="pedido_orcamento.html" class="nav-link text-gray-800 font-medium">Pedido de Orçamentos</a>
-                    <a href="contactos.html" class="nav-link text-gray-800 font-medium">Contactos</a>
-                </div>
-                <div class="md:hidden">
-                    <button id="mobileMenuButton" class="text-gray-800 focus:outline-none" aria-expanded="false" aria-controls="mobileMenu">
-                        <i data-feather="menu" aria-hidden="true"></i>
-                        <span class="sr-only">Abrir menu</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg absolute w-full z-30">
-        <div class="container mx-auto px-4 py-2">
-            <a href="index.html" class="block py-2 text-gray-800 transition-colors">Home</a>
-            <a href="oqfazemos.html" class="block py-2 text-gray-800 transition-colors">O que Fazemos</a>
-            <a href="catalogos.html" class="block py-2 text-gray-800 transition-colors">Catálogos</a>
-            <a href="obras.html" class="block py-2 text-yellow-600 font-medium">Obras</a>
-            <a href="pedido_orcamento.html" class="block py-2 text-gray-800 transition-colors">Pedido de Orçamentos</a>
-            <a href="contactos.html" class="block py-2 text-gray-800 transition-colors">Contactos</a>
-        </div>
-    </div>
+    True
 
     <!-- Hero Section with Parallax Banner -->
     <section class="banner-parallax relative overflow-hidden" aria-label="Banner principal - Nossas Obras">
@@ -492,13 +458,7 @@
 
     <script>
         // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobileMenuButton');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            feather.replace();
-        });
+        False;
 
         // Gallery filter functionality
         const filterButtons = document.querySelectorAll('.category-btn');
@@ -603,3 +563,7 @@
 </body>
 
 </html>
+
+
+
+
