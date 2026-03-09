@@ -1,0 +1,8 @@
+{
+  "name": "dexcarte",
+  "version": "1.0.0",
+  "description": "Dexcarte static site local development",
+  "scripts": {
+    "start": "npx -y http-server .. -p 8080 -c-1"
+  }
+}

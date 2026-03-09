@@ -24,8 +24,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
 
     <!-- GSAP and ScrollTrigger (deferred) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
@@ -120,7 +120,7 @@
                 </div>
                 <div class="lg:hidden">
                     <button id="mobileMenuButton" class="mobile-menu-button text-gray-800 hover:text-yellow-600 focus:outline-none p-2" aria-expanded="false" aria-controls="mobileMenu">
-                        <span class="material-icons text-3xl" aria-hidden="true">menu</span>
+                        <i data-feather="menu" aria-hidden="true" class="w-8 h-8"></i>
                         <span class="sr-only">Abrir menu</span>
                     </button>
                 </div>
@@ -156,7 +156,7 @@
                 <p class="text-xl md:text-2xl text-white mb-8" data-i18n="index-hero-sub">Onde a resistência do ferro encontra a beleza do design</p>
                 <a href="/dexcarte/contactos/" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-4 px-8 rounded-lg transition duration-300">
                     <span data-i18n="index-hero-cta">Contacte-nos</span>
-                    <span class="material-icons ml-2" aria-hidden="true">arrow_forward</span>
+                    <i data-feather="arrow-right" class="ml-2 w-5 h-5" aria-hidden="true"></i>
                 </a>
             </div>
         </section>
@@ -175,9 +175,9 @@
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-3" data-i18n="svc-gates-title">Fabrico de Portões e Gradeamentos</h3>
                             <p class="text-gray-600 mb-4" data-i18n="svc-gates-desc">Estruturas robustas e elegantes, adaptadas ao estilo e necessidades de cada cliente.</p>
-                            <a href="/dexcarte/oqfazemos/" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700 transition-colors">
+                            <a href="/dexcarte/oqfazemos/#portoes" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700 transition-colors">
                                 <span>Leia Mais</span>
-                                <span class="material-icons ml-1 text-sm" aria-hidden="true">arrow_forward</span>
+                                <i data-feather="arrow-right" class="ml-1 w-4 h-4" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -188,9 +188,9 @@
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-3" data-i18n="svc-stairs-title">Escadas e Corrimões em Ferro</h3>
                             <p class="text-gray-600 mb-4" data-i18n="svc-stairs-desc">Design seguro e sofisticado, ideal para interiores e exteriores.</p>
-                            <a href="/dexcarte/oqfazemos/" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700 transition-colors">
+                            <a href="/dexcarte/oqfazemos/#escadas" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700 transition-colors">
                                 <span>Leia Mais</span>
-                                <span class="material-icons ml-1 text-sm" aria-hidden="true">arrow_forward</span>
+                                <i data-feather="arrow-right" class="ml-1 w-4 h-4" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -201,22 +201,22 @@
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-3" data-i18n="svc-art-title">Peças Artesanais em Ferro Forjado</h3>
                             <p class="text-gray-600 mb-4" data-i18n="svc-art-desc">Criações únicas que valorizam qualquer espaço, com atenção ao detalhe e ao acabamento.</p>
-                            <a href="/dexcarte/oqfazemos/" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700 transition-colors">
+                            <a href="/dexcarte/oqfazemos/#artesanais" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700 transition-colors">
                                 <span>Leia Mais</span>
-                                <span class="material-icons ml-1 text-sm" aria-hidden="true">arrow_forward</span>
+                                <i data-feather="arrow-right" class="ml-1 w-4 h-4" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
 
                     <!-- Service Card 4 -->
                     <div class="service-card bg-gray-50 rounded-lg overflow-hidden transition duration-300">
-                        <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/IMAGE+1-1920w.webp" alt="Estruturas Metálicas" class="w-full h-48 object-cover lazy-load" loading="lazy">
+                        <img src="images/service-structures.webp" alt="Estruturas Metálicas" class="w-full h-48 object-cover lazy-load" loading="lazy">
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-3" data-i18n="svc-struct-title">Estruturas Metálicas</h3>
                             <p class="text-gray-600 mb-4" data-i18n="svc-struct-desc">Projetos de pequeno e médio porte, concebidos com precisão e durabilidade.</p>
-                            <a href="/dexcarte/oqfazemos/" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700 transition-colors">
+                            <a href="/dexcarte/oqfazemos/#estruturas" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700 transition-colors">
                                 <span>Leia Mais</span>
-                                <span class="material-icons ml-1 text-sm" aria-hidden="true">arrow_forward</span>
+                                <i data-feather="arrow-right" class="ml-1 w-4 h-4" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -232,11 +232,11 @@
                 <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
                     <a href="/dexcarte/pedido-orcamento/" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
                         <span>Contacte-nos!</span>
-                        <span class="material-icons ml-2" aria-hidden="true">arrow_forward</span>
+                        <i data-feather="arrow-right" class="ml-2 w-5 h-5" aria-hidden="true"></i>
                     </a>
                     <a href="/dexcarte/catalogos/" class="inline-flex items-center border-2 border-yellow-600 text-yellow-600 hover:bg-yellow-600 hover:text-white font-bold py-3 px-8 rounded-lg transition duration-300">
                         <span>Ver Catálogos</span>
-                        <span class="material-icons ml-2" aria-hidden="true">menu_book</span>
+                        <i data-feather="book-open" class="ml-2 w-5 h-5" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -252,28 +252,28 @@
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="feature-card text-center">
                         <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
-                            <span class="material-icons text-yellow-600 text-3xl" aria-hidden="true">emoji_events</span>
+                            <i data-feather="award" class="text-yellow-600 w-8 h-8" aria-hidden="true"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-2" data-i18n="index-feat1-title">Experiência Comprovada</h3>
                         <p class="text-gray-600" data-i18n="index-feat1-desc">Mais de 20 anos de excelência em ferro forjado e construções metálicas</p>
                     </div>
                     <div class="feature-card text-center">
                         <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
-                            <span class="material-icons text-yellow-600 text-3xl" aria-hidden="true">star</span>
+                            <i data-feather="star" class="text-yellow-600 w-8 h-8" aria-hidden="true"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-2" data-i18n="index-feat2-title">Qualidade e Personalização</h3>
                         <p class="text-gray-600" data-i18n="index-feat2-desc">Produtos feitos à medida, com materiais de alta qualidade.</p>
                     </div>
                     <div class="feature-card text-center">
                         <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
-                            <span class="material-icons text-yellow-600 text-3xl" aria-hidden="true">build</span>
+                            <i data-feather="tool" class="text-yellow-600 w-8 h-8" aria-hidden="true"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-2" data-i18n="index-feat3-title">Tradição e Inovação</h3>
                         <p class="text-gray-600" data-i18n="index-feat3-desc">Aliamos o artesanato tradicional a técnicas modernas.</p>
                     </div>
                     <div class="feature-card text-center">
                         <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
-                            <span class="material-icons text-yellow-600 text-3xl" aria-hidden="true">schedule</span>
+                            <i data-feather="clock" class="text-yellow-600 w-8 h-8" aria-hidden="true"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-2" data-i18n="index-feat4-title">Compromisso e Confiança</h3>
                         <p class="text-gray-600" data-i18n="index-feat4-desc">Projetos entregues com rigor, pontualidade e atenção ao detalhe.</p>
@@ -282,8 +282,60 @@
                 <div class="text-center mt-12">
                     <a href="/dexcarte/oqfazemos/" class="inline-flex items-center border-2 border-yellow-600 text-yellow-600 hover:bg-yellow-600 hover:text-white font-bold py-3 px-6 rounded-lg transition duration-300">
                         <span data-i18n="index-about-link">Saiba mais sobre nós</span>
-                        <span class="material-icons ml-2" aria-hidden="true">arrow_forward</span>
+                        <i data-feather="arrow-right" class="ml-2 w-5 h-5" aria-hidden="true"></i>
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-20 bg-gray-50" aria-labelledby="testimonials-heading">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <p class="text-yellow-600 font-semibold tracking-widest uppercase text-sm mb-3">Clientes Satisfeitos</p>
+                    <h2 id="testimonials-heading" class="text-3xl md:text-4xl font-bold mb-4">O que dizem os nossos clientes</h2>
+                    <div class="w-16 h-1 bg-yellow-500 mx-auto"></div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="testimonial-card bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                        <div class="flex gap-0.5 mb-5 text-yellow-400 text-xl">★★★★★</div>
+                        <p class="text-gray-600 mb-6 italic leading-relaxed">"Ficámos muito satisfeitos com o resultado final. O portão que nos fabricaram é exactamente o que tínhamos imaginado. Excelente qualidade e atendimento."</p>
+                        <div class="flex items-center">
+                            <div class="bg-yellow-100 w-10 h-10 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <span class="text-yellow-700 font-bold text-sm">JP</span>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800">João Pereira</p>
+                                <p class="text-gray-500 text-sm">Particular, Santarém</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                        <div class="flex gap-0.5 mb-5 text-yellow-400 text-xl">★★★★★</div>
+                        <p class="text-gray-600 mb-6 italic leading-relaxed">"Encomendámos corrimões para a escadaria da nossa empresa. O trabalho foi impecável — entregue a tempo, bem acabado e com um preço justo. Recomendo vivamente."</p>
+                        <div class="flex items-center">
+                            <div class="bg-yellow-100 w-10 h-10 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <span class="text-yellow-700 font-bold text-sm">MS</span>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800">Margarida Sousa</p>
+                                <p class="text-gray-500 text-sm">Escritório, Lisboa</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                        <div class="flex gap-0.5 mb-5 text-yellow-400 text-xl">★★★★★</div>
+                        <p class="text-gray-600 mb-6 italic leading-relaxed">"A Dexcarte fez um gradeamento personalizado para a minha moradia. Desde o primeiro contacto até à instalação final, tudo correu na perfeição. Profissionais de confiança."</p>
+                        <div class="flex items-center">
+                            <div class="bg-yellow-100 w-10 h-10 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <span class="text-yellow-700 font-bold text-sm">RC</span>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800">Rui Carvalho</p>
+                                <p class="text-gray-500 text-sm">Particular, Carregado</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -307,10 +359,10 @@
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="gallery-item overflow-hidden rounded-lg shadow-md">
-                        <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/image+3-1920w.webp" alt="Projecto de portão em ferro forjado" class="w-full h-full object-cover lazy-load" loading="lazy">
+                        <img src="images/gallery-project1.webp" alt="Projecto de portão em ferro forjado" class="w-full h-full object-cover lazy-load" loading="lazy">
                     </div>
                     <div class="gallery-item overflow-hidden rounded-lg shadow-md">
-                        <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/image+5-1920w.webp" alt="Escada com corrimão em ferro" class="w-full h-full object-cover lazy-load" loading="lazy">
+                        <img src="images/gallery-project2.webp" alt="Escada com corrimão em ferro" class="w-full h-full object-cover lazy-load" loading="lazy">
                     </div>
                     <div class="gallery-item overflow-hidden rounded-lg shadow-md">
                         <img src="images/obra-escada-exterior.jpeg" alt="Escada metálica exterior" class="w-full h-full object-cover lazy-load" loading="lazy">
@@ -322,7 +374,7 @@
                 <div class="text-center mt-8">
                     <a href="/dexcarte/obras/" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
                         <span data-i18n="index-gallery-link">Ver Mais</span>
-                        <span class="material-icons ml-2" aria-hidden="true">arrow_forward</span>
+                        <i data-feather="arrow-right" class="ml-2 w-5 h-5" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -334,19 +386,19 @@
                 <h2 id="contact-heading" class="text-3xl md:text-4xl font-bold mb-6" data-i18n="index-cta-title">Faz o teu pedido orçamento!</h2>
                 <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-8">
                     <div class="flex items-center">
-                        <span class="material-icons mr-2" aria-hidden="true">phone</span>
+                        <i data-feather="phone" class="mr-2 w-5 h-5" aria-hidden="true"></i>
                         <a href="tel:263859145" class="hover:underline">263859145</a>
                         <span class="mx-2">/</span>
                         <a href="tel:935770086" class="hover:underline">935770086</a>
                     </div>
                     <div class="flex items-center">
-                        <span class="material-icons mr-2" aria-hidden="true">mail</span>
+                        <i data-feather="mail" class="mr-2 w-5 h-5" aria-hidden="true"></i>
                         <a href="mailto:dexcarte@gmail.com" class="hover:underline">dexcarte@gmail.com</a>
                     </div>
                 </div>
                 <a href="/dexcarte/pedido-orcamento/" class="inline-flex items-center bg-white hover:bg-gray-100 text-yellow-600 font-bold py-3 px-8 rounded-lg transition duration-300">
                     <span data-i18n="index-cta-link">Solicitar Orçamento</span>
-                    <span class="material-icons ml-2" aria-hidden="true">arrow_forward</span>
+                    <i data-feather="arrow-right" class="ml-2 w-5 h-5" aria-hidden="true"></i>
                 </a>
             </div>
         </section>
@@ -361,7 +413,7 @@
                     <img src="images/logo-dexcarte.png" alt="Dexcarte Logo" class="h-16 mb-4" width="222" height="64">
                     <div class="flex space-x-4 mb-6">
                         <a href="https://facebook.com" target="_blank" class="hover:text-yellow-400 transition-colors" aria-label="Siga-nos no Facebook">
-                            <span class="material-icons" aria-hidden="true">facebook</span>
+                            <i data-feather="facebook" class="w-5 h-5" aria-hidden="true"></i>
                         </a>
                         <a href="https://www.livroreclamacoes.pt" target="_blank" aria-label="Livro de Reclamações">
                             <img src="images/livro-reclamacoes.png" alt="Livro de Reclamações" class="h-6">
@@ -393,24 +445,24 @@
                     <p class="mb-4" data-i18n="footer-contact-desc">Para dúvidas ou questões contacte-nos:</p>
                     <div class="mb-4">
                         <a href="mailto:dexcarte@gmail.com" class="flex items-center hover:text-yellow-400 transition-colors mb-2">
-                            <span class="material-icons mr-2" aria-hidden="true">mail</span> dexcarte@gmail.com
+                            <i data-feather="mail" class="mr-2 w-4 h-4" aria-hidden="true"></i> dexcarte@gmail.com
                         </a>
                     </div>
                     <h4 class="font-bold mb-2" data-i18n="footer-talk-to-us">Fale connosco:</h4>
                     <div class="mb-2">
                         <a href="tel:263859145" class="flex items-center hover:text-yellow-400 transition-colors">
-                            <span class="material-icons mr-2" aria-hidden="true">phone</span>
+                            <i data-feather="phone" class="mr-2 w-4 h-4" aria-hidden="true"></i>
                             <span data-i18n="footer-phone">Telefone: 263859145 (Chamada para rede fixa nacional)</span>
                         </a>
                     </div>
                     <div class="mb-2">
                         <a href="tel:935770086" class="flex items-center hover:text-yellow-400 transition-colors">
-                            <span class="material-icons mr-2" aria-hidden="true">smartphone</span>
+                            <i data-feather="smartphone" class="mr-2 w-4 h-4" aria-hidden="true"></i>
                             <span data-i18n="footer-mobile">Telemóvel: 935770086 (Chamada para rede móvel nacional)</span>
                         </a>
                     </div>
                     <div class="mb-2">
-                        <span class="material-icons inline mr-2" aria-hidden="true">print</span>
+                        <i data-feather="printer" class="inline mr-2 w-4 h-4" aria-hidden="true"></i>
                         <span data-i18n="footer-fax">Fax: 219593691</span>
                     </div>
                 </div>
@@ -420,7 +472,7 @@
                     <a href="/dexcarte/contactos/" class="hover:text-yellow-400 mr-4 transition-colors" data-i18n="footer-privacy">Política de Privacidade</a>
                     <a href="/dexcarte/contactos/" class="hover:text-yellow-400 transition-colors" data-i18n="footer-cookies">Política de Cookies</a>
                 </div>
-                <p>© 2025 All rights reserved to Dexcarte-Comércio de Ferro Forjado e Construções – Powered by Páginas Amarelas</p>
+                <p>© <span id="copyright-year">2025</span> All rights reserved to Dexcarte-Comércio de Ferro Forjado e Construções – Powered by Páginas Amarelas</p>
                 <p class="mt-4 text-yellow-400" data-i18n="footer-cookie-notice">O nosso website utiliza cookies para melhorar e personalizar a sua experiência de navegação. <a href="/dexcarte/contactos/" class="underline" data-i18n="footer-cookie-learn">Saiba mais</a></p>
             </div>
         </div>
@@ -429,6 +481,13 @@
     <script src="i18n.js"></script>
     <script src="main.js"></script>
     <script>
+        // Auto-update copyright year
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    </script>
+    <script>
+        // Initialize feather icons
+        if (typeof feather !== 'undefined') feather.replace();
+
         // Initialize GSAP animations when resources are loaded
         window.addEventListener('load', () => {
                 // Check if GSAP is available
