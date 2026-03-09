@@ -15,32 +15,32 @@
     <meta property="og:locale" content="pt_PT">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/images/site_favicon.ico">
-    <link rel="shortcut icon" type="image/x-icon" href="/images/site_favicon.ico">
-    <link rel="apple-touch-icon" href="/images/logo-dexcarte.png">
+    <link rel="icon" type="image/x-icon" href="/dexcarte/images/site_favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/dexcarte/images/site_favicon.ico">
+    <link rel="apple-touch-icon" href="/dexcarte/images/logo-dexcarte.png">
     <meta name="theme-color" content="#d97706">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/dexcarte/styles.css">
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
     <nav id="mainNav" class="bg-white shadow-md sticky top-0 z-40 transition-all duration-300" aria-label="Navegação principal">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
-                <a href="/" class="flex items-center focus:outline-none">
-                    <img src="/images/logo-dexcarte.png" alt="Dexcarte Logo" class="h-16">
+                <a href="/dexcarte/" class="flex items-center focus:outline-none">
+                    <img src="/dexcarte/images/logo-dexcarte.png" alt="Dexcarte Logo" class="h-16">
                 </a>
                 <div class="hidden lg:flex items-center space-x-6">
-                    <a href="/" class="nav-link text-gray-800 font-medium" data-i18n="nav-home">Home</a>
-                    <a href="/oqfazemos/" class="nav-link text-gray-800 font-medium" data-i18n="nav-oqfazemos">O que Fazemos</a>
-                    <a href="/catalogos/" class="nav-link active text-yellow-600 font-medium" data-i18n="nav-catalogos">Catálogos</a>
-                    <a href="/obras/" class="nav-link text-gray-800 font-medium" data-i18n="nav-obras">Obras</a>
-                    <a href="/pedido-orcamento/" class="nav-link text-gray-800 font-medium" data-i18n="nav-pedido">Pedido de Orçamentos</a>
-                    <a href="/contactos/" class="nav-link text-gray-800 font-medium" data-i18n="nav-contactos">Contactos</a>
+                    <a href="/dexcarte/" class="nav-link text-gray-800 font-medium" data-i18n="nav-home">Home</a>
+                    <a href="/dexcarte/oqfazemos/" class="nav-link text-gray-800 font-medium" data-i18n="nav-oqfazemos">O que Fazemos</a>
+                    <a href="/dexcarte/catalogos/" class="nav-link active text-yellow-600 font-medium" data-i18n="nav-catalogos">Catálogos</a>
+                    <a href="/dexcarte/obras/" class="nav-link text-gray-800 font-medium" data-i18n="nav-obras">Obras</a>
+                    <a href="/dexcarte/pedido-orcamento/" class="nav-link text-gray-800 font-medium" data-i18n="nav-pedido">Pedido de Orçamentos</a>
+                    <a href="/dexcarte/contactos/" class="nav-link text-gray-800 font-medium" data-i18n="nav-contactos">Contactos</a>
                     <div class="relative ml-auto" id="langDropdownWrap">
                         <button id="langDropdownBtn" class="flex items-center gap-1.5 text-sm font-medium text-gray-700 hover:text-yellow-600 border border-gray-300 rounded-lg px-3 py-1.5 transition-colors focus:outline-none" aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
@@ -72,12 +72,12 @@
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden lg:hidden bg-white shadow-xl border-t border-gray-100 fixed top-24 w-full z-30 transform transition-transform duration-300 origin-top -translate-y-2 opacity-0">
         <div class="container mx-auto px-6 py-4 flex flex-col space-y-2">
-            <a href="/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50" data-i18n="nav-home">Home</a>
-            <a href="/oqfazemos/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50" data-i18n="nav-oqfazemos">O que Fazemos</a>
-            <a href="/catalogos/" class="block py-3 text-lg text-yellow-600 font-medium border-b border-gray-50" data-i18n="nav-catalogos">Catálogos</a>
-            <a href="/obras/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50" data-i18n="nav-obras">Obras</a>
-            <a href="/pedido-orcamento/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50" data-i18n="nav-pedido">Pedido de Orçamentos</a>
-            <a href="/contactos/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors" data-i18n="nav-contactos">Contactos</a>
+            <a href="/dexcarte/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50" data-i18n="nav-home">Home</a>
+            <a href="/dexcarte/oqfazemos/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50" data-i18n="nav-oqfazemos">O que Fazemos</a>
+            <a href="/dexcarte/catalogos/" class="block py-3 text-lg text-yellow-600 font-medium border-b border-gray-50" data-i18n="nav-catalogos">Catálogos</a>
+            <a href="/dexcarte/obras/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50" data-i18n="nav-obras">Obras</a>
+            <a href="/dexcarte/pedido-orcamento/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50" data-i18n="nav-pedido">Pedido de Orçamentos</a>
+            <a href="/dexcarte/contactos/" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors" data-i18n="nav-contactos">Contactos</a>
             <div class="border-t border-gray-200 pt-3 mt-1">
                 <label class="text-sm text-gray-500 mb-1 block">Idioma / Language</label>
                 <select id="langMobileSelect" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-yellow-600">
@@ -110,10 +110,10 @@
                         <h3 class="text-xl font-bold mb-3">Prumos - Parte 1</h3>
                         <p class="text-gray-600 mb-4">Coleção de prumos básicos em ferro forjado para estruturas e gradeamentos.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/catalogos/prumos_1.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                            <a href="/dexcarte/catalogos/prumos_1.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
                                 <i data-feather="download" class="inline mr-2"></i><span data-i18n="cat-download"> Baixar PDF</span>
                             </a>
-                            <a href="/catalogos/prumos_1.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                            <a href="/dexcarte/catalogos/prumos_1.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
                                 <i data-feather="eye" class="inline mr-2"></i><span data-i18n="cat-view"> Ver PDF</span>
                             </a>
                         </div>
@@ -129,10 +129,10 @@
                         <h3 class="text-xl font-bold mb-3">Prumos - Parte 2</h3>
                         <p class="text-gray-600 mb-4">Continuação da coleção de prumos em ferro forjado com diferentes designs.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/catalogos/prumos_2.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                            <a href="/dexcarte/catalogos/prumos_2.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
                                 <i data-feather="download" class="inline mr-2"></i><span data-i18n="cat-download"> Baixar PDF</span>
                             </a>
-                            <a href="/catalogos/prumos_2.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                            <a href="/dexcarte/catalogos/prumos_2.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
                                 <i data-feather="eye" class="inline mr-2"></i><span data-i18n="cat-view"> Ver PDF</span>
                             </a>
                         </div>
@@ -148,10 +148,10 @@
                         <h3 class="text-xl font-bold mb-3">Prumos de Arranque</h3>
                         <p class="text-gray-600 mb-4">Prumos especiais para arranque e início de estruturas em ferro forjado.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/catalogos/prumos_de_arranque.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                            <a href="/dexcarte/catalogos/prumos_de_arranque.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
                                 <i data-feather="download" class="inline mr-2"></i><span data-i18n="cat-download"> Baixar PDF</span>
                             </a>
-                            <a href="/catalogos/prumos_de_arranque.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                            <a href="/dexcarte/catalogos/prumos_de_arranque.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
                                 <i data-feather="eye" class="inline mr-2"></i><span data-i18n="cat-view"> Ver PDF</span>
                             </a>
                         </div>
@@ -167,10 +167,10 @@
                         <h3 class="text-xl font-bold mb-3">Prumos de Barriga</h3>
                         <p class="text-gray-600 mb-4">Prumos com formato de barriga para decoração de grades e portões.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/catalogos/prumos_de_barriga.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                            <a href="/dexcarte/catalogos/prumos_de_barriga.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
                                 <i data-feather="download" class="inline mr-2"></i><span data-i18n="cat-download"> Baixar PDF</span>
                             </a>
-                            <a href="/catalogos/prumos_de_barriga.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                            <a href="/dexcarte/catalogos/prumos_de_barriga.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
                                 <i data-feather="eye" class="inline mr-2"></i><span data-i18n="cat-view"> Ver PDF</span>
                             </a>
                         </div>
@@ -186,10 +186,10 @@
                         <h3 class="text-xl font-bold mb-3">Prumos com Pontas de Lança</h3>
                         <p class="text-gray-600 mb-4">Prumos decorativos com pontas de lança para proteção e estética.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/catalogos/prumos_com_pontas_de_lanca.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                            <a href="/dexcarte/catalogos/prumos_com_pontas_de_lanca.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
                                 <i data-feather="download" class="inline mr-2"></i><span data-i18n="cat-download"> Baixar PDF</span>
                             </a>
-                            <a href="/catalogos/prumos_com_pontas_de_lanca.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                            <a href="/dexcarte/catalogos/prumos_com_pontas_de_lanca.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
                                 <i data-feather="eye" class="inline mr-2"></i><span data-i18n="cat-view"> Ver PDF</span>
                             </a>
                         </div>
@@ -205,10 +205,10 @@
                         <h3 class="text-xl font-bold mb-3">Painéis</h3>
                         <p class="text-gray-600 mb-4">Painéis decorativos em ferro forjado para portões e vedações.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/catalogos/paineis.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                            <a href="/dexcarte/catalogos/paineis.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
                                 <i data-feather="download" class="inline mr-2"></i><span data-i18n="cat-download"> Baixar PDF</span>
                             </a>
-                            <a href="/catalogos/paineis.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                            <a href="/dexcarte/catalogos/paineis.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
                                 <i data-feather="eye" class="inline mr-2"></i><span data-i18n="cat-view"> Ver PDF</span>
                             </a>
                         </div>
@@ -224,10 +224,10 @@
                         <h3 class="text-xl font-bold mb-3">Barras Furadas</h3>
                         <p class="text-gray-600 mb-4">Barras perfuradas em ferro forjado para estruturas e decoração.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/catalogos/barras_furadas.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                            <a href="/dexcarte/catalogos/barras_furadas.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
                                 <i data-feather="download" class="inline mr-2"></i><span data-i18n="cat-download"> Baixar PDF</span>
                             </a>
-                            <a href="/catalogos/barras_furadas.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                            <a href="/dexcarte/catalogos/barras_furadas.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
                                 <i data-feather="eye" class="inline mr-2"></i><span data-i18n="cat-view"> Ver PDF</span>
                             </a>
                         </div>
@@ -243,10 +243,10 @@
                         <h3 class="text-xl font-bold mb-3">Corrimão, Tubos e Varões</h3>
                         <p class="text-gray-600 mb-4">Elementos estruturais para escadas e corrimões em ferro forjado.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/catalogos/corrimao_tubos_e_varoes.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                            <a href="/dexcarte/catalogos/corrimao_tubos_e_varoes.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
                                 <i data-feather="download" class="inline mr-2"></i><span data-i18n="cat-download"> Baixar PDF</span>
                             </a>
-                            <a href="/catalogos/corrimao_tubos_e_varoes.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                            <a href="/dexcarte/catalogos/corrimao_tubos_e_varoes.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
                                 <i data-feather="eye" class="inline mr-2"></i><span data-i18n="cat-view"> Ver PDF</span>
                             </a>
                         </div>
@@ -262,10 +262,10 @@
                         <h3 class="text-xl font-bold mb-3">Canholas</h3>
                         <p class="text-gray-600 mb-4">Peças de ligação e suporte em ferro forjado para estruturas.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/catalogos/canholas.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                            <a href="/dexcarte/catalogos/canholas.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
                                 <i data-feather="download" class="inline mr-2"></i><span data-i18n="cat-download"> Baixar PDF</span>
                             </a>
-                            <a href="/catalogos/canholas.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                            <a href="/dexcarte/catalogos/canholas.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
                                 <i data-feather="eye" class="inline mr-2"></i><span data-i18n="cat-view"> Ver PDF</span>
                             </a>
                         </div>
@@ -282,10 +282,10 @@
                         <h3 class="text-xl font-bold mb-3">Caracóis</h3>
                         <p class="text-gray-600 mb-4">Elementos decorativos em espiral para embelezamento de estruturas.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/catalogos/caracois.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                            <a href="/dexcarte/catalogos/caracois.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
                                 <i data-feather="download" class="inline mr-2"></i><span data-i18n="cat-download"> Baixar PDF</span>
                             </a>
-                            <a href="/catalogos/caracois.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                            <a href="/dexcarte/catalogos/caracois.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
                                 <i data-feather="eye" class="inline mr-2"></i><span data-i18n="cat-view"> Ver PDF</span>
                             </a>
                         </div>
@@ -301,10 +301,10 @@
                         <h3 class="text-xl font-bold mb-3">Caracóis Grandes</h3>
                         <p class="text-gray-600 mb-4">Caracóis de maior dimensão para decoração de portões e grades.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/catalogos/caracois_grandes.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                            <a href="/dexcarte/catalogos/caracois_grandes.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
                                 <i data-feather="download" class="inline mr-2"></i><span data-i18n="cat-download"> Baixar PDF</span>
                             </a>
-                            <a href="/catalogos/caracois_grandes.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                            <a href="/dexcarte/catalogos/caracois_grandes.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
                                 <i data-feather="eye" class="inline mr-2"></i><span data-i18n="cat-view"> Ver PDF</span>
                             </a>
                         </div>
@@ -320,10 +320,10 @@
                         <h3 class="text-xl font-bold mb-3">Caracóis Ligados</h3>
                         <p class="text-gray-600 mb-4">Sistemas de caracóis interligados para composições decorativas.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/catalogos/caracois_ligados.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                            <a href="/dexcarte/catalogos/caracois_ligados.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
                                 <i data-feather="download" class="inline mr-2"></i><span data-i18n="cat-download"> Baixar PDF</span>
                             </a>
-                            <a href="/catalogos/caracois_ligados.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                            <a href="/dexcarte/catalogos/caracois_ligados.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
                                 <i data-feather="eye" class="inline mr-2"></i><span data-i18n="cat-view"> Ver PDF</span>
                             </a>
                         </div>
@@ -339,10 +339,10 @@
                         <h3 class="text-xl font-bold mb-3">Folhas e Flores</h3>
                         <p class="text-gray-600 mb-4">Elementos florais decorativos em ferro forjado para ornamentação.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/catalogos/folhas_e_flores.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                            <a href="/dexcarte/catalogos/folhas_e_flores.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
                                 <i data-feather="download" class="inline mr-2"></i><span data-i18n="cat-download"> Baixar PDF</span>
                             </a>
-                            <a href="/catalogos/folhas_e_flores.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                            <a href="/dexcarte/catalogos/folhas_e_flores.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
                                 <i data-feather="eye" class="inline mr-2"></i><span data-i18n="cat-view"> Ver PDF</span>
                             </a>
                         </div>
@@ -358,10 +358,10 @@
                         <h3 class="text-xl font-bold mb-3">Rosetas</h3>
                         <p class="text-gray-600 mb-4">Peças decorativas circulares em ferro forjado com motivos florais.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/catalogos/rosetas.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                            <a href="/dexcarte/catalogos/rosetas.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
                                 <i data-feather="download" class="inline mr-2"></i><span data-i18n="cat-download"> Baixar PDF</span>
                             </a>
-                            <a href="/catalogos/rosetas.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                            <a href="/dexcarte/catalogos/rosetas.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
                                 <i data-feather="eye" class="inline mr-2"></i><span data-i18n="cat-view"> Ver PDF</span>
                             </a>
                         </div>
@@ -377,10 +377,10 @@
                         <h3 class="text-xl font-bold mb-3">Esferas</h3>
                         <p class="text-gray-600 mb-4">Esferas decorativas em ferro forjado para remates e ornamentação.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/catalogos/esferas.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                            <a href="/dexcarte/catalogos/esferas.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
                                 <i data-feather="download" class="inline mr-2"></i><span data-i18n="cat-download"> Baixar PDF</span>
                             </a>
-                            <a href="/catalogos/esferas.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                            <a href="/dexcarte/catalogos/esferas.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
                                 <i data-feather="eye" class="inline mr-2"></i><span data-i18n="cat-view"> Ver PDF</span>
                             </a>
                         </div>
@@ -396,10 +396,10 @@
                         <h3 class="text-xl font-bold mb-3">Pontas de Lança</h3>
                         <p class="text-gray-600 mb-4">Pontas decorativas e de proteção para topos de grades e portões.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/catalogos/pontas_de_lanca.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                            <a href="/dexcarte/catalogos/pontas_de_lanca.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
                                 <i data-feather="download" class="inline mr-2"></i><span data-i18n="cat-download"> Baixar PDF</span>
                             </a>
-                            <a href="/catalogos/pontas_de_lanca.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                            <a href="/dexcarte/catalogos/pontas_de_lanca.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
                                 <i data-feather="eye" class="inline mr-2"></i><span data-i18n="cat-view"> Ver PDF</span>
                             </a>
                         </div>
@@ -415,10 +415,10 @@
                         <h3 class="text-xl font-bold mb-3">Terminais</h3>
                         <p class="text-gray-600 mb-4">Peças de acabamento e remate para estruturas em ferro forjado.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/catalogos/terminais.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                            <a href="/dexcarte/catalogos/terminais.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
                                 <i data-feather="download" class="inline mr-2"></i><span data-i18n="cat-download"> Baixar PDF</span>
                             </a>
-                            <a href="/catalogos/terminais.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                            <a href="/dexcarte/catalogos/terminais.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
                                 <i data-feather="eye" class="inline mr-2"></i><span data-i18n="cat-view"> Ver PDF</span>
                             </a>
                         </div>
@@ -434,10 +434,10 @@
                         <h3 class="text-xl font-bold mb-3">Remates e Bases</h3>
                         <p class="text-gray-600 mb-4">Elementos de base e remate para estruturas e decorações.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/catalogos/remates_e_bases.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                            <a href="/dexcarte/catalogos/remates_e_bases.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
                                 <i data-feather="download" class="inline mr-2"></i><span data-i18n="cat-download"> Baixar PDF</span>
                             </a>
-                            <a href="/catalogos/remates_e_bases.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                            <a href="/dexcarte/catalogos/remates_e_bases.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
                                 <i data-feather="eye" class="inline mr-2"></i><span data-i18n="cat-view"> Ver PDF</span>
                             </a>
                         </div>
@@ -453,10 +453,10 @@
                         <h3 class="text-xl font-bold mb-3">Argolas</h3>
                         <p class="text-gray-600 mb-4">Argolas em ferro forjado para grades, portões e aplicações decorativas.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/catalogos/argolas.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                            <a href="/dexcarte/catalogos/argolas.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
                                 <i data-feather="download" class="inline mr-2"></i><span data-i18n="cat-download"> Baixar PDF</span>
                             </a>
-                            <a href="/catalogos/argolas.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                            <a href="/dexcarte/catalogos/argolas.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
                                 <i data-feather="eye" class="inline mr-2"></i><span data-i18n="cat-view"> Ver PDF</span>
                             </a>
                         </div>
@@ -472,10 +472,10 @@
                         <h3 class="text-xl font-bold mb-3">Vários Elementos</h3>
                         <p class="text-gray-600 mb-4">Coleção diversificada de elementos decorativos em ferro forjado.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/catalogos/varios_elementos.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                            <a href="/dexcarte/catalogos/varios_elementos.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
                                 <i data-feather="download" class="inline mr-2"></i><span data-i18n="cat-download"> Baixar PDF</span>
                             </a>
-                            <a href="/catalogos/varios_elementos.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                            <a href="/dexcarte/catalogos/varios_elementos.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
                                 <i data-feather="eye" class="inline mr-2"></i><span data-i18n="cat-view"> Ver PDF</span>
                             </a>
                         </div>
@@ -491,10 +491,10 @@
                         <h3 class="text-xl font-bold mb-3">Prumos de Barriga - Variações</h3>
                         <p class="text-gray-600 mb-4">Variações adicionais de prumos com formato de barriga decorativo.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/catalogos/prumos_de_barriga.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                            <a href="/dexcarte/catalogos/prumos_de_barriga.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
                                 <i data-feather="download" class="inline mr-2"></i><span data-i18n="cat-download"> Baixar PDF</span>
                             </a>
-                            <a href="/catalogos/prumos_de_barriga.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                            <a href="/dexcarte/catalogos/prumos_de_barriga.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
                                 <i data-feather="eye" class="inline mr-2"></i><span data-i18n="cat-view"> Ver PDF</span>
                             </a>
                         </div>
@@ -511,13 +511,13 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">Prumos</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+8-640w.webp" alt="Prumos" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+8-640w.webp" alt="Prumos" class="w-full h-64 object-contain p-4">
                 </div>
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+9-640w.webp" alt="Prumos" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+9-640w.webp" alt="Prumos" class="w-full h-64 object-contain p-4">
                 </div>
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+10-640w.webp" alt="Prumos" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+10-640w.webp" alt="Prumos" class="w-full h-64 object-contain p-4">
                 </div>
             </div>
         </div>
@@ -529,13 +529,13 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">Caracóis</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+23-640w.webp" alt="Caracóis" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+23-640w.webp" alt="Caracóis" class="w-full h-64 object-contain p-4">
                 </div>
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+24-640w.webp" alt="Caracóis" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+24-640w.webp" alt="Caracóis" class="w-full h-64 object-contain p-4">
                 </div>
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+25-640w.webp" alt="Caracóis" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+25-640w.webp" alt="Caracóis" class="w-full h-64 object-contain p-4">
                 </div>
             </div>
         </div>
@@ -547,13 +547,13 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">Barras, Remates, Tubos e Varões</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+13-640w.webp" alt="Barras e Tubos" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+13-640w.webp" alt="Barras e Tubos" class="w-full h-64 object-contain p-4">
                 </div>
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+14-640w.webp" alt="Barras e Tubos" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+14-640w.webp" alt="Barras e Tubos" class="w-full h-64 object-contain p-4">
                 </div>
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+15-640w.webp" alt="Barras e Tubos" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+15-640w.webp" alt="Barras e Tubos" class="w-full h-64 object-contain p-4">
                 </div>
             </div>
         </div>
@@ -565,10 +565,10 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">Canholas</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+11-640w.webp" alt="Canholas" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+11-640w.webp" alt="Canholas" class="w-full h-64 object-contain p-4">
                 </div>
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+12-640w.webp" alt="Canholas" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+12-640w.webp" alt="Canholas" class="w-full h-64 object-contain p-4">
                 </div>
             </div>
         </div>
@@ -580,10 +580,10 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">Pontas de Lança</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+21-640w.webp" alt="Pontas de Lança" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+21-640w.webp" alt="Pontas de Lança" class="w-full h-64 object-contain p-4">
                 </div>
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+22-640w.webp" alt="Pontas de Lança" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+22-640w.webp" alt="Pontas de Lança" class="w-full h-64 object-contain p-4">
                 </div>
             </div>
         </div>
@@ -595,10 +595,10 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">Coroas e Rosetas</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+6-640w.webp" alt="Coroas e Rosetas" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+6-640w.webp" alt="Coroas e Rosetas" class="w-full h-64 object-contain p-4">
                 </div>
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+7-640w.webp" alt="Coroas e Rosetas" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+7-640w.webp" alt="Coroas e Rosetas" class="w-full h-64 object-contain p-4">
                 </div>
             </div>
         </div>
@@ -610,10 +610,10 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">Folhas e Flores</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+1-640w.webp" alt="Folhas" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+1-640w.webp" alt="Folhas" class="w-full h-64 object-contain p-4">
                 </div>
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+2-640w.webp" alt="Folhas" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+2-640w.webp" alt="Folhas" class="w-full h-64 object-contain p-4">
                 </div>
             </div>
         </div>
@@ -627,14 +627,14 @@
                 <div>
                     <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 text-gray-800">Argolas, Pinhas e Bases</h2>
                     <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                        <img src="/catalogos/catalagos+16-640w.webp" alt="Argolas e Bases" class="w-full h-64 object-contain p-4">
+                        <img src="/dexcarte/catalogos/catalagos+16-640w.webp" alt="Argolas e Bases" class="w-full h-64 object-contain p-4">
                     </div>
                 </div>
                 <!-- Rodízios, Carros e Calha -->
                 <div>
                     <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 text-gray-800">Rodízios, Carros e Calha</h2>
                     <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                        <img src="/catalogos/catalagos+17-640w.webp" alt="Rodízios e Carros" class="w-full h-64 object-contain p-4">
+                        <img src="/dexcarte/catalogos/catalagos+17-640w.webp" alt="Rodízios e Carros" class="w-full h-64 object-contain p-4">
                     </div>
                 </div>
             </div>
@@ -647,13 +647,13 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">Inox</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+18-640w.webp" alt="Inox" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+18-640w.webp" alt="Inox" class="w-full h-64 object-contain p-4">
                 </div>
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+19-640w.webp" alt="Inox" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+19-640w.webp" alt="Inox" class="w-full h-64 object-contain p-4">
                 </div>
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+20-640w.webp" alt="Inox" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+20-640w.webp" alt="Inox" class="w-full h-64 object-contain p-4">
                 </div>
             </div>
         </div>
@@ -665,13 +665,13 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">Dobraças, Olhais, Guias e Fechaduras</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+3-640w.webp" alt="Dobraças e Fechaduras" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+3-640w.webp" alt="Dobraças e Fechaduras" class="w-full h-64 object-contain p-4">
                 </div>
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+4-640w.webp" alt="Dobraças e Fechaduras" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+4-640w.webp" alt="Dobraças e Fechaduras" class="w-full h-64 object-contain p-4">
                 </div>
                 <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="/catalogos/catalagos+5-640w.webp" alt="Dobraças e Fechaduras" class="w-full h-64 object-contain p-4">
+                    <img src="/dexcarte/catalogos/catalagos+5-640w.webp" alt="Dobraças e Fechaduras" class="w-full h-64 object-contain p-4">
                 </div>
             </div>
         </div>
@@ -682,19 +682,19 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <img src="/images/logo-dexcarte.png" alt="Dexcarte Logo" class="h-16 mb-4">
+                    <img src="/dexcarte/images/logo-dexcarte.png" alt="Dexcarte Logo" class="h-16 mb-4">
                     <div class="flex space-x-4 mb-6">
                         <a href="https://facebook.com" target="_blank" class="hover:text-yellow-400"><i data-feather="facebook"></i></a>
-                        <a href="https://www.livroreclamacoes.pt" target="_blank"><img src="/images/livro-reclamacoes.png" alt="Livro de Reclamações" class="h-6"></a>
+                        <a href="https://www.livroreclamacoes.pt" target="_blank"><img src="/dexcarte/images/livro-reclamacoes.png" alt="Livro de Reclamações" class="h-6"></a>
                     </div>
                     <h4 class="text-lg font-bold mb-4" data-i18n="footer-services">Serviços</h4>
                     <ul class="space-y-2">
-                        <li><a href="/" class="hover:text-yellow-400" data-i18n="nav-home">Home</a></li>
-                        <li><a href="/oqfazemos/" class="hover:text-yellow-400" data-i18n="nav-oqfazemos">O que Fazemos</a></li>
-                        <li><a href="/catalogos/" class="text-yellow-400" data-i18n="nav-catalogos">Catálogos</a></li>
-                        <li><a href="/obras/" class="hover:text-yellow-400" data-i18n="nav-obras">Obras</a></li>
-                        <li><a href="/pedido-orcamento/" class="hover:text-yellow-400" data-i18n="nav-pedido">Pedido de Orçamentos</a></li>
-                        <li><a href="/contactos/" class="hover:text-yellow-400" data-i18n="nav-contactos">Contactos</a></li>
+                        <li><a href="/dexcarte/" class="hover:text-yellow-400" data-i18n="nav-home">Home</a></li>
+                        <li><a href="/dexcarte/oqfazemos/" class="hover:text-yellow-400" data-i18n="nav-oqfazemos">O que Fazemos</a></li>
+                        <li><a href="/dexcarte/catalogos/" class="text-yellow-400" data-i18n="nav-catalogos">Catálogos</a></li>
+                        <li><a href="/dexcarte/obras/" class="hover:text-yellow-400" data-i18n="nav-obras">Obras</a></li>
+                        <li><a href="/dexcarte/pedido-orcamento/" class="hover:text-yellow-400" data-i18n="nav-pedido">Pedido de Orçamentos</a></li>
+                        <li><a href="/dexcarte/contactos/" class="hover:text-yellow-400" data-i18n="nav-contactos">Contactos</a></li>
                     </ul>
                 </div>
                 <div>
@@ -737,15 +737,15 @@
             </div>
             <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
                 <div class="mb-4">
-                    <a href="/contactos/" class="hover:text-yellow-400 mr-4" data-i18n="footer-privacy">Política de Privacidade</a>
-                    <a href="/contactos/" class="hover:text-yellow-400" data-i18n="footer-cookies">Política de Cookies</a>
+                    <a href="/dexcarte/contactos/" class="hover:text-yellow-400 mr-4" data-i18n="footer-privacy">Política de Privacidade</a>
+                    <a href="/dexcarte/contactos/" class="hover:text-yellow-400" data-i18n="footer-cookies">Política de Cookies</a>
                 </div>
                 <p>© 2025 All rights reserved to Dexcarte-Comércio de Ferro Forjado e Construções</p>
             </div>
         </div>
     </footer>
 
-    <script src="/i18n.js"></script>
-    <script src="/main.js"></script>
+    <script src="/dexcarte/i18n.js"></script>
+    <script src="/dexcarte/main.js"></script>
 </body>
 </html>
