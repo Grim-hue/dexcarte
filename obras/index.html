@@ -533,14 +533,6 @@
         </div>
     </footer>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black bg-opacity-90 flex items-center justify-center p-4">
-        <button id="lightbox-close" class="absolute top-4 right-4 text-white hover:text-yellow-500 focus:outline-none transition-colors">
-            <i data-feather="x" class="w-10 h-10"></i>
-        </button>
-        <img id="lightbox-img" src="" alt="Imagem Ampliada" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl">
-    </div>
-
     <script src="/dexcarte/i18n.js"></script>
     <script src="/dexcarte/main.js"></script>
     <script>
@@ -569,46 +561,6 @@
                     }
                 });
             });
-        });
-
-        // Lightbox functionality
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxClose = document.getElementById('lightbox-close');
-        const galleryImages = document.querySelectorAll('.gallery-item img');
-
-        // Open lightbox
-        galleryImages.forEach(img => {
-            // Add pointer cursor to indicate clickability
-            img.style.cursor = 'pointer';
-            
-            img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
-                lightboxImg.alt = img.alt;
-                lightbox.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
-            });
-        });
-
-        // Close lightbox
-        const closeLightbox = () => {
-            lightbox.classList.add('hidden');
-            document.body.style.overflow = ''; // Restore scrolling
-        };
-
-        lightboxClose.addEventListener('click', closeLightbox);
-        lightbox.addEventListener('click', (e) => {
-            // Close if clicking outside the image
-            if (e.target === lightbox) {
-                closeLightbox();
-            }
-        });
-
-        // Close on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
-                closeLightbox();
-            }
         });
 
         // Initialize GSAP and parallax effect
