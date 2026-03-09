@@ -1,25 +1,25 @@
-# 🛠️ Dexcarte - Comércio de Ferro Forjado e Construções
+# Dexcarte - Comércio de Ferro Forjado e Construções
 
-A professional, fully responsive website for **Dexcarte**, a Portuguese metalworking company specializing in wrought iron work and metal construction.
+A professional, fully responsive website for Dexcarte, a Portuguese metalworking company specializing in wrought iron work and metal construction.
 
-## 🚀 Live Demo
+## Live Demo
 
-The project is built to be hosted on **GitHub Pages**.  
-**[Live Website Link]** _(Once deployed, the link will be https://grim-hue.github.io/dexcarte/)_
+The project is built to be hosted on GitHub Pages.  
+[Live Website Link](https://grim-hue.github.io/dexcarte/)
 
 ---
 
-## ✨ Features
+## Features
 
 - **Service Catalog**: Detailed overview of portões, gradeamentos, escadas, and estruturas metálicas.
 - **Portfolio Showcase**: Image gallery of completed projects and works.
 - **Responsive Design**: Mobile-first architecture using Tailwind CSS.
 - **Modern Typography**: Utilizing `Playfair Display` for elegant headings and `Inter` for clean body text.
-- **Functional Contact & Quote Forms**: Fully working contact and budget request forms powered by **Web3Forms**.
+- **Functional Contact & Quote Forms**: Fully working contact and budget request forms powered by Web3Forms.
 
 ---
 
-## 💻 Technology Stack
+## Technology Stack
 
 - **HTML5 & CSS3**
 - **JavaScript** (Vanilla)
@@ -32,7 +32,7 @@ _(Note: Some unused React files exist in the repository from an earlier iteratio
 
 ---
 
-## 📧 Form Setup (Web3Forms)
+## Form Setup (Web3Forms)
 
 The site uses [Web3Forms](https://web3forms.com/) to handle contact form submissions without a backend server.
 
@@ -44,7 +44,7 @@ The site uses [Web3Forms](https://web3forms.com/) to handle contact form submiss
 
 ---
 
-## 🌍 Deployment (GitHub Pages)
+## Deployment (GitHub Pages)
 
 This site is a static HTML project, making it perfectly suited for free hosting on GitHub Pages.
 
@@ -58,6 +58,6 @@ This site is a static HTML project, making it perfectly suited for free hosting 
 
 ---
 
-## 📄 License & Copyright
+## License & Copyright
 
 © 2025 All rights reserved to Dexcarte - Comércio de Ferro Forjado e Construções. Powered by Páginas Amarelas.

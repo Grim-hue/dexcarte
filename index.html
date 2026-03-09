@@ -5,45 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dexcarte - Comércio de Ferro Forjado e Construções</title>
     <meta name="description" content="Dexcarte - Especialistas em ferro forjado e construções metálicas há mais de 20 anos. Portões, gradeamentos, escadas e peças artesanais personalizadas.">
-    
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Dexcarte - Comércio de Ferro Forjado e Construções">
+    <meta property="og:description" content="Especialistas em ferro forjado e construções metálicas há mais de 20 anos. Portões, gradeamentos, escadas e peças artesanais personalizadas.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo-dexcarte.png">
+    <meta property="og:locale" content="pt_PT">
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/site_favicon.ico">
     <link rel="shortcut icon" type="image/x-icon" href="images/site_favicon.ico">
     <link rel="apple-touch-icon" href="images/logo-dexcarte.png">
     <meta name="theme-color" content="#d97706">
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="https://cdn.tailwindcss.com" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" as="style">
-    
+
     <!-- External Resources -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <!-- GSAP and ScrollTrigger (deferred) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-    
+
+    <link rel="stylesheet" href="styles.css">
     <style>
-        :root {
-            --primary-color: #d97706;
-            --primary-dark: #b45309;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #f9fafb;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-dark);
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-        }
-        
         /* Hero Banner Parallax Styles */
         .hero-banner-parallax {
             min-height: 100vh;
@@ -56,11 +44,11 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .hero-banner-parallax__title {
             font-size: clamp(2rem, 4vw + 1rem, 4rem);
         }
-        
+
         /* Banner Parallax Styles */
         .banner-parallax {
             min-height: 70vh;
@@ -73,100 +61,9 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .banner-parallax__title {
             font-size: clamp(2rem, 4vw + 1rem, 4rem);
-        }
-        
-        /* Remove glass-nav and banner-parallax overrides from this section */
-        
-        /* Component Styles */
-        .service-card {
-            transition: all 0.3s ease;
-            border-top: 3px solid transparent;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 5px 10px -5px rgba(0, 0, 0, 0.04);
-            border-top-color: var(--primary-color);
-        }
-        
-        .gallery-item {
-            transition: all 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .feature-card {
-            transition: all 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .nav-link {
-            position: relative;
-        }
-        
-        .nav-link::after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-        
-        .nav-link.active {
-            color: var(--primary-color);
-        }
-        
-        .hero-pattern {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        
-        /* Performance optimizations */
-        .lazy-load {
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .lazy-loaded {
-            opacity: 1;
-        }
-        
-        /* Focus styles for accessibility */
-        button:focus,
-        a:focus {
-            outline: 2px solid var(--primary-color);
-            outline-offset: 2px;
-        }
-        
-        /* Loading animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .animate-fadeInUp {
-            animation: fadeInUp 0.6s ease-out forwards;
         }
     </style>
 </head>
@@ -195,7 +92,7 @@
                 <a href="index.html" class="flex items-center focus:outline-none">
                     <img src="images/logo-dexcarte.png" alt="Dexcarte Logo" class="h-16">
                 </a>
-                <div class="hidden md:flex space-x-8">
+                <div class="hidden lg:flex space-x-6">
                     <a href="index.html" class="nav-link active text-gray-800 font-medium">Home</a>
                     <a href="oqfazemos.html" class="nav-link text-gray-800 font-medium">O que Fazemos</a>
                     <a href="catalogos.html" class="nav-link text-gray-800 font-medium">Catálogos</a>
@@ -203,7 +100,7 @@
                     <a href="pedido_orcamento.html" class="nav-link text-gray-800 font-medium">Pedido de Orçamentos</a>
                     <a href="contactos.html" class="nav-link text-gray-800 font-medium">Contactos</a>
                 </div>
-                <div class="md:hidden">
+                <div class="lg:hidden">
                     <button id="mobileMenuButton" class="mobile-menu-button text-gray-800 hover:text-yellow-600 focus:outline-none p-2" aria-expanded="false" aria-controls="mobileMenu">
                         <span class="material-icons text-3xl" aria-hidden="true">menu</span>
                         <span class="sr-only">Abrir menu</span>
@@ -214,8 +111,7 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden md:hidden bg-white shadow-xl border-t border-gray-100 absolute w-full z-30 transform transition-transform duration-300 origin-top -translate-y-2 opacity-0">
+    <div id="mobileMenu" class="hidden lg:hidden bg-white shadow-xl border-t border-gray-100 fixed top-24 w-full z-30 transform transition-transform duration-300 origin-top -translate-y-2 opacity-0">
         <div class="container mx-auto px-6 py-4 flex flex-col space-y-2">
             <a href="index.html" class="block py-3 text-lg text-yellow-600 font-medium border-b border-gray-50">Home</a>
             <a href="oqfazemos.html" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50">O que Fazemos</a>
@@ -308,10 +204,16 @@
             <div class="container mx-auto px-4 text-center">
                 <h2 id="cta-heading" class="text-3xl font-bold mb-6">Personalize o seu projeto connosco</h2>
                 <p class="text-xl mb-8 max-w-2xl mx-auto">Solicite o seu orçamento agora e dê vida às suas ideias com qualidade e profissionalismo.</p>
-                <a href="pedido_orcamento.html" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
-                    <span>Contacte-nos!</span>
-                    <span class="material-icons ml-2" aria-hidden="true">arrow_forward</span>
-                </a>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="pedido_orcamento.html" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                        <span>Contacte-nos!</span>
+                        <span class="material-icons ml-2" aria-hidden="true">arrow_forward</span>
+                    </a>
+                    <a href="catalogos.html" class="inline-flex items-center border-2 border-yellow-600 text-yellow-600 hover:bg-yellow-600 hover:text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                        <span>Ver Catálogos</span>
+                        <span class="material-icons ml-2" aria-hidden="true">menu_book</span>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -496,103 +398,10 @@
         </div>
     </footer>
 
+    <script src="main.js"></script>
     <script>
-        // Wait for DOM to be fully loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            // Mobile menu toggle
-            const mobileMenuButton = document.getElementById('mobileMenuButton');
-            const mobileMenu = document.getElementById('mobileMenu');
-            
-            mobileMenuButton.addEventListener('click', () => {
-                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-                mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
-                if (mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.remove('hidden');
-                    // Small delay to allow display block to apply before animating opacity/transform
-                    setTimeout(() => {
-                        mobileMenu.classList.remove('-translate-y-2', 'opacity-0');
-                        mobileMenu.classList.add('translate-y-0', 'opacity-100');
-                    }, 10);
-                } else {
-                    mobileMenu.classList.remove('translate-y-0', 'opacity-100');
-                    mobileMenu.classList.add('-translate-y-2', 'opacity-0');
-                    // Wait for transition before hiding
-                    setTimeout(() => {
-                        mobileMenu.classList.add('hidden');
-                    }, 300);
-                }
-            });
-            
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.remove('translate-y-0', 'opacity-100');
-                        mobileMenu.classList.add('-translate-y-2', 'opacity-0');
-                        setTimeout(() => {
-                            mobileMenu.classList.add('hidden');
-                        }, 300);
-                        mobileMenuButton.setAttribute('aria-expanded', 'false');
-                    }
-                }
-            });
-            
-            // Cookie consent
-            const cookieConsent = document.getElementById('cookieConsent');
-            const cookieAccept = document.getElementById('cookieAccept');
-            const cookieDeny = document.getElementById('cookieDeny');
-            
-            if (!localStorage.getItem('cookieConsent')) {
-                setTimeout(() => {
-                    cookieConsent.classList.remove('hidden');
-                    setTimeout(() => {
-                        cookieConsent.classList.remove('translate-y-full');
-                    }, 100);
-                }, 1000);
-            }
-            
-            cookieAccept.addEventListener('click', () => {
-                localStorage.setItem('cookieConsent', 'accepted');
-                cookieConsent.classList.add('translate-y-full');
-                setTimeout(() => {
-                    cookieConsent.classList.add('hidden');
-                }, 300);
-            });
-            
-            cookieDeny.addEventListener('click', () => {
-                localStorage.setItem('cookieConsent', 'denied');
-                cookieConsent.classList.add('translate-y-full');
-                setTimeout(() => {
-                    cookieConsent.classList.add('hidden');
-                }, 300);
-            });
-            
-            // Removed scroll effect for glass navigation as it is now solid white and sticky
-            
-            // Lazy loading for images
-            const lazyImages = document.querySelectorAll('.lazy-load');
-            
-            if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const img = entry.target;
-                            img.classList.add('lazy-loaded');
-                            imageObserver.unobserve(img);
-                        }
-                    });
-                });
-                
-                lazyImages.forEach(img => imageObserver.observe(img));
-            } else {
-                // Fallback for browsers that don't support IntersectionObserver
-                lazyImages.forEach(img => {
-                    img.classList.add('lazy-loaded');
-                });
-            }
-            
-            // Initialize GSAP animations when resources are loaded
-            window.addEventListener('load', () => {
+        // Initialize GSAP animations when resources are loaded
+        window.addEventListener('load', () => {
                 // Check if GSAP is available
                 if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
                     // Register ScrollTrigger plugin
@@ -737,7 +546,6 @@
                     });
                 }
             });
-        });
     </script>
 </body>
 </html>

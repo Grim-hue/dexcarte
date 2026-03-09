@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://grim-hue.github.io/dexcarte/sitemap.xml

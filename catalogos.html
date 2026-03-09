@@ -4,76 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogos | Dexcarte</title>
-    
+    <meta name="description" content="Explore os catálogos de produtos Dexcarte: prumos, caracóis, folhas, rosetas, pontas de lança e mais elementos em ferro forjado.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Catálogos | Dexcarte">
+    <meta property="og:description" content="Explore os catálogos de produtos Dexcarte: prumos, caracóis, folhas, rosetas, pontas de lança e mais elementos em ferro forjado.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo-dexcarte.png">
+    <meta property="og:locale" content="pt_PT">
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/site_favicon.ico">
     <link rel="shortcut icon" type="image/x-icon" href="images/site_favicon.ico">
     <link rel="apple-touch-icon" href="images/logo-dexcarte.png">
     <meta name="theme-color" content="#d97706">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .catalog-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-        
-        .gallery-item {
-            transition: all 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.02);
-        }
-        
-        .hero-pattern {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        
-        /* Standard Navigation Styles */
-        .nav-link {
-            position: relative;
-            transition: all 0.3s ease;
-            outline: none;
-            border: none;
-        }
-        
-        .nav-link:focus {
-            outline: none;
-            border: none;
-            box-shadow: none;
-        }
-        
-        .nav-link::after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #d97706;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-        
-        .nav-link.active {
-            color: #d97706;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
@@ -83,7 +33,7 @@
                 <a href="index.html" class="flex items-center focus:outline-none">
                     <img src="images/logo-dexcarte.png" alt="Dexcarte Logo" class="h-16">
                 </a>
-                <div class="hidden md:flex space-x-8">
+                <div class="hidden lg:flex space-x-6">
                     <a href="index.html" class="nav-link text-gray-800 font-medium">Home</a>
                     <a href="oqfazemos.html" class="nav-link text-gray-800 font-medium">O que Fazemos</a>
                     <a href="catalogos.html" class="nav-link active text-yellow-600 font-medium">Catálogos</a>
@@ -91,9 +41,9 @@
                     <a href="pedido_orcamento.html" class="nav-link text-gray-800 font-medium">Pedido de Orçamentos</a>
                     <a href="contactos.html" class="nav-link text-gray-800 font-medium">Contactos</a>
                 </div>
-                <div class="md:hidden">
+                <div class="lg:hidden">
                     <button id="mobileMenuButton" class="mobile-menu-button text-gray-800 hover:text-yellow-600 focus:outline-none p-2" aria-expanded="false" aria-controls="mobileMenu">
-                        <span class="material-icons text-3xl" aria-hidden="true">menu</span>
+                        <i data-feather="menu" aria-hidden="true" class="w-8 h-8"></i>
                         <span class="sr-only">Abrir menu</span>
                     </button>
                 </div>
@@ -102,7 +52,7 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden md:hidden bg-white shadow-xl border-t border-gray-100 absolute w-full z-30 transform transition-transform duration-300 origin-top -translate-y-2 opacity-0">
+    <div id="mobileMenu" class="hidden lg:hidden bg-white shadow-xl border-t border-gray-100 fixed top-24 w-full z-30 transform transition-transform duration-300 origin-top -translate-y-2 opacity-0">
         <div class="container mx-auto px-6 py-4 flex flex-col space-y-2">
             <a href="index.html" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50">Home</a>
             <a href="oqfazemos.html" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50">O que Fazemos</a>
@@ -134,9 +84,14 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Prumos - Parte 1</h3>
                         <p class="text-gray-600 mb-4">Coleção de prumos básicos em ferro forjado para estruturas e gradeamentos.</p>
-                        <a href="catalogos/prumos_1.pdf" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
-                            <i data-feather="download" class="inline mr-2"></i> Baixar PDF
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="catalogos/prumos_1.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                                <i data-feather="download" class="inline mr-2"></i> Baixar PDF
+                            </a>
+                            <a href="catalogos/prumos_1.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                                <i data-feather="eye" class="inline mr-2"></i> Ver PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -148,9 +103,14 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Prumos - Parte 2</h3>
                         <p class="text-gray-600 mb-4">Continuação da coleção de prumos em ferro forjado com diferentes designs.</p>
-                        <a href="catalogos/prumos_2.pdf" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
-                            <i data-feather="download" class="inline mr-2"></i> Baixar PDF
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="catalogos/prumos_2.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                                <i data-feather="download" class="inline mr-2"></i> Baixar PDF
+                            </a>
+                            <a href="catalogos/prumos_2.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                                <i data-feather="eye" class="inline mr-2"></i> Ver PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -162,9 +122,14 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Prumos de Arranque</h3>
                         <p class="text-gray-600 mb-4">Prumos especiais para arranque e início de estruturas em ferro forjado.</p>
-                        <a href="catalogos/prumos_de_arranque.pdf" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
-                            <i data-feather="download" class="inline mr-2"></i> Baixar PDF
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="catalogos/prumos_de_arranque.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                                <i data-feather="download" class="inline mr-2"></i> Baixar PDF
+                            </a>
+                            <a href="catalogos/prumos_de_arranque.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                                <i data-feather="eye" class="inline mr-2"></i> Ver PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -176,9 +141,14 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Prumos de Barriga</h3>
                         <p class="text-gray-600 mb-4">Prumos com formato de barriga para decoração de grades e portões.</p>
-                        <a href="catalogos/prumos_de_barriga.pdf" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
-                            <i data-feather="download" class="inline mr-2"></i> Baixar PDF
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="catalogos/prumos_de_barriga.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                                <i data-feather="download" class="inline mr-2"></i> Baixar PDF
+                            </a>
+                            <a href="catalogos/prumos_de_barriga.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                                <i data-feather="eye" class="inline mr-2"></i> Ver PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -190,9 +160,14 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Prumos com Pontas de Lança</h3>
                         <p class="text-gray-600 mb-4">Prumos decorativos com pontas de lança para proteção e estética.</p>
-                        <a href="catalogos/prumos_com_pontas_de_lanca.pdf" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
-                            <i data-feather="download" class="inline mr-2"></i> Baixar PDF
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="catalogos/prumos_com_pontas_de_lanca.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                                <i data-feather="download" class="inline mr-2"></i> Baixar PDF
+                            </a>
+                            <a href="catalogos/prumos_com_pontas_de_lanca.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                                <i data-feather="eye" class="inline mr-2"></i> Ver PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -204,9 +179,14 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Painéis</h3>
                         <p class="text-gray-600 mb-4">Painéis decorativos em ferro forjado para portões e vedações.</p>
-                        <a href="catalogos/paineis.pdf" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
-                            <i data-feather="download" class="inline mr-2"></i> Baixar PDF
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="catalogos/paineis.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                                <i data-feather="download" class="inline mr-2"></i> Baixar PDF
+                            </a>
+                            <a href="catalogos/paineis.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                                <i data-feather="eye" class="inline mr-2"></i> Ver PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -218,9 +198,14 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Barras Furadas</h3>
                         <p class="text-gray-600 mb-4">Barras perfuradas em ferro forjado para estruturas e decoração.</p>
-                        <a href="catalogos/barras_furadas.pdf" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
-                            <i data-feather="download" class="inline mr-2"></i> Baixar PDF
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="catalogos/barras_furadas.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                                <i data-feather="download" class="inline mr-2"></i> Baixar PDF
+                            </a>
+                            <a href="catalogos/barras_furadas.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                                <i data-feather="eye" class="inline mr-2"></i> Ver PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -232,9 +217,14 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Corrimão, Tubos e Varões</h3>
                         <p class="text-gray-600 mb-4">Elementos estruturais para escadas e corrimões em ferro forjado.</p>
-                        <a href="catalogos/corrimao_tubos_e_varoes.pdf" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
-                            <i data-feather="download" class="inline mr-2"></i> Baixar PDF
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="catalogos/corrimao_tubos_e_varoes.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                                <i data-feather="download" class="inline mr-2"></i> Baixar PDF
+                            </a>
+                            <a href="catalogos/corrimao_tubos_e_varoes.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                                <i data-feather="eye" class="inline mr-2"></i> Ver PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -246,9 +236,14 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Canholas</h3>
                         <p class="text-gray-600 mb-4">Peças de ligação e suporte em ferro forjado para estruturas.</p>
-                        <a href="catalogos/canholas.pdf" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
-                            <i data-feather="download" class="inline mr-2"></i> Baixar PDF
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="catalogos/canholas.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                                <i data-feather="download" class="inline mr-2"></i> Baixar PDF
+                            </a>
+                            <a href="catalogos/canholas.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                                <i data-feather="eye" class="inline mr-2"></i> Ver PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -261,9 +256,14 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Caracóis</h3>
                         <p class="text-gray-600 mb-4">Elementos decorativos em espiral para embelezamento de estruturas.</p>
-                        <a href="catalogos/caracois.pdf" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
-                            <i data-feather="download" class="inline mr-2"></i> Baixar PDF
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="catalogos/caracois.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                                <i data-feather="download" class="inline mr-2"></i> Baixar PDF
+                            </a>
+                            <a href="catalogos/caracois.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                                <i data-feather="eye" class="inline mr-2"></i> Ver PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -275,9 +275,14 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Caracóis Grandes</h3>
                         <p class="text-gray-600 mb-4">Caracóis de maior dimensão para decoração de portões e grades.</p>
-                        <a href="catalogos/caracois_grandes.pdf" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
-                            <i data-feather="download" class="inline mr-2"></i> Baixar PDF
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="catalogos/caracois_grandes.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                                <i data-feather="download" class="inline mr-2"></i> Baixar PDF
+                            </a>
+                            <a href="catalogos/caracois_grandes.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                                <i data-feather="eye" class="inline mr-2"></i> Ver PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -289,9 +294,14 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Caracóis Ligados</h3>
                         <p class="text-gray-600 mb-4">Sistemas de caracóis interligados para composições decorativas.</p>
-                        <a href="catalogos/caracois_ligados.pdf" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
-                            <i data-feather="download" class="inline mr-2"></i> Baixar PDF
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="catalogos/caracois_ligados.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                                <i data-feather="download" class="inline mr-2"></i> Baixar PDF
+                            </a>
+                            <a href="catalogos/caracois_ligados.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                                <i data-feather="eye" class="inline mr-2"></i> Ver PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -303,9 +313,14 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Folhas e Flores</h3>
                         <p class="text-gray-600 mb-4">Elementos florais decorativos em ferro forjado para ornamentação.</p>
-                        <a href="catalogos/folhas_e_flores.pdf" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
-                            <i data-feather="download" class="inline mr-2"></i> Baixar PDF
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="catalogos/folhas_e_flores.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                                <i data-feather="download" class="inline mr-2"></i> Baixar PDF
+                            </a>
+                            <a href="catalogos/folhas_e_flores.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                                <i data-feather="eye" class="inline mr-2"></i> Ver PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -317,9 +332,14 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Rosetas</h3>
                         <p class="text-gray-600 mb-4">Peças decorativas circulares em ferro forjado com motivos florais.</p>
-                        <a href="catalogos/rosetas.pdf" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
-                            <i data-feather="download" class="inline mr-2"></i> Baixar PDF
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="catalogos/rosetas.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                                <i data-feather="download" class="inline mr-2"></i> Baixar PDF
+                            </a>
+                            <a href="catalogos/rosetas.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                                <i data-feather="eye" class="inline mr-2"></i> Ver PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -331,9 +351,14 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Esferas</h3>
                         <p class="text-gray-600 mb-4">Esferas decorativas em ferro forjado para remates e ornamentação.</p>
-                        <a href="catalogos/esferas.pdf" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
-                            <i data-feather="download" class="inline mr-2"></i> Baixar PDF
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="catalogos/esferas.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                                <i data-feather="download" class="inline mr-2"></i> Baixar PDF
+                            </a>
+                            <a href="catalogos/esferas.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                                <i data-feather="eye" class="inline mr-2"></i> Ver PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -345,9 +370,14 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Pontas de Lança</h3>
                         <p class="text-gray-600 mb-4">Pontas decorativas e de proteção para topos de grades e portões.</p>
-                        <a href="catalogos/pontas_de_lanca.pdf" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
-                            <i data-feather="download" class="inline mr-2"></i> Baixar PDF
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="catalogos/pontas_de_lanca.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                                <i data-feather="download" class="inline mr-2"></i> Baixar PDF
+                            </a>
+                            <a href="catalogos/pontas_de_lanca.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                                <i data-feather="eye" class="inline mr-2"></i> Ver PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -359,9 +389,14 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Terminais</h3>
                         <p class="text-gray-600 mb-4">Peças de acabamento e remate para estruturas em ferro forjado.</p>
-                        <a href="catalogos/terminais.pdf" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
-                            <i data-feather="download" class="inline mr-2"></i> Baixar PDF
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="catalogos/terminais.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                                <i data-feather="download" class="inline mr-2"></i> Baixar PDF
+                            </a>
+                            <a href="catalogos/terminais.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                                <i data-feather="eye" class="inline mr-2"></i> Ver PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -373,9 +408,14 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Remates e Bases</h3>
                         <p class="text-gray-600 mb-4">Elementos de base e remate para estruturas e decorações.</p>
-                        <a href="catalogos/remates_e_bases.pdf" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
-                            <i data-feather="download" class="inline mr-2"></i> Baixar PDF
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="catalogos/remates_e_bases.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                                <i data-feather="download" class="inline mr-2"></i> Baixar PDF
+                            </a>
+                            <a href="catalogos/remates_e_bases.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                                <i data-feather="eye" class="inline mr-2"></i> Ver PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -387,9 +427,14 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Argolas</h3>
                         <p class="text-gray-600 mb-4">Argolas em ferro forjado para grades, portões e aplicações decorativas.</p>
-                        <a href="catalogos/argolas.pdf" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
-                            <i data-feather="download" class="inline mr-2"></i> Baixar PDF
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="catalogos/argolas.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                                <i data-feather="download" class="inline mr-2"></i> Baixar PDF
+                            </a>
+                            <a href="catalogos/argolas.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                                <i data-feather="eye" class="inline mr-2"></i> Ver PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -401,9 +446,14 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Vários Elementos</h3>
                         <p class="text-gray-600 mb-4">Coleção diversificada de elementos decorativos em ferro forjado.</p>
-                        <a href="catalogos/varios_elementos.pdf" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
-                            <i data-feather="download" class="inline mr-2"></i> Baixar PDF
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="catalogos/varios_elementos.pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                                <i data-feather="download" class="inline mr-2"></i> Baixar PDF
+                            </a>
+                            <a href="catalogos/varios_elementos.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                                <i data-feather="eye" class="inline mr-2"></i> Ver PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -415,9 +465,14 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Prumos de Barriga - Variações</h3>
                         <p class="text-gray-600 mb-4">Variações adicionais de prumos com formato de barriga decorativo.</p>
-                        <a href="catalogos/prumos_de_barriga%20(1).pdf" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
-                            <i data-feather="download" class="inline mr-2"></i> Baixar PDF
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="catalogos/prumos_de_barriga%20(1).pdf" class="flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded transition duration-300" download>
+                                <i data-feather="download" class="inline mr-2"></i> Baixar PDF
+                            </a>
+                            <a href="catalogos/prumos_de_barriga%20(1).pdf" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white font-medium py-2 px-4 rounded transition duration-300">
+                                <i data-feather="eye" class="inline mr-2"></i> Ver PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -662,48 +717,6 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobileMenuButton');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
-            if (mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.remove('hidden');
-                setTimeout(() => {
-                    mobileMenu.classList.remove('-translate-y-2', 'opacity-0');
-                    mobileMenu.classList.add('translate-y-0', 'opacity-100');
-                }, 10);
-            } else {
-                mobileMenu.classList.remove('translate-y-0', 'opacity-100');
-                mobileMenu.classList.add('-translate-y-2', 'opacity-0');
-                setTimeout(() => {
-                    mobileMenu.classList.add('hidden');
-                }, 300);
-            }
-            if (typeof feather !== 'undefined') feather.replace();
-        });
-
-        // Close on click outside
-        document.addEventListener('click', (e) => {
-            if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.remove('translate-y-0', 'opacity-100');
-                    mobileMenu.classList.add('-translate-y-2', 'opacity-0');
-                    setTimeout(() => {
-                        mobileMenu.classList.add('hidden');
-                    }, 300);
-                    mobileMenuButton.setAttribute('aria-expanded', 'false');
-                }
-            }
-        });
-        
-        // Initialize feather icons
-        document.addEventListener('DOMContentLoaded', () => {
-            feather.replace();
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>

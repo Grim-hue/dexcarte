@@ -4,107 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O que Fazemos | Dexcarte</title>
-    
+    <meta name="description" content="Conheça os serviços da Dexcarte: portões, gradeamentos, escadas, corrimões, peças artesanais e estruturas metálicas em ferro forjado.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="O que Fazemos | Dexcarte">
+    <meta property="og:description" content="Conheça os serviços da Dexcarte: portões, gradeamentos, escadas, corrimões, peças artesanais e estruturas metálicas em ferro forjado.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo-dexcarte.png">
+    <meta property="og:locale" content="pt_PT">
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/site_favicon.ico">
     <link rel="shortcut icon" type="image/x-icon" href="images/site_favicon.ico">
     <link rel="apple-touch-icon" href="images/logo-dexcarte.png">
     <meta name="theme-color" content="#d97706">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .service-card {
-            transition: all 0.3s ease;
-            border-top: 3px solid transparent;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 5px 10px -5px rgba(0, 0, 0, 0.04);
-            border-top-color: #d97706;
-        }
-        
-        .process-step {
-            position: relative;
-        }
-        
-        .process-step:not(:last-child):after {
-            content: "";
-            position: absolute;
-            top: 40px;
-            right: -40px;
-            width: 40px;
-            height: 2px;
-            background-color: #d97706;
-        }
-        
-        @media (max-width: 768px) {
-            .process-step:not(:last-child):after {
-                display: none;
-            }
-        }
-        
-        .material-card {
-            transition: all 0.3s ease;
-            border-bottom: 3px solid transparent;
-        }
-        
-        .material-card:hover {
-            transform: translateY(-5px);
-            border-bottom-color: #d97706;
-        }
-        
-        /* Standard Navigation Styles */
-        .nav-link {
-            position: relative;
-            transition: all 0.3s ease;
-            outline: none;
-            border: none;
-        }
-        
-        .nav-link:focus {
-            outline: none;
-            border: none;
-            box-shadow: none;
-        }
-        
-        .nav-link::after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #d97706;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-        
-        .nav-link.active {
-            color: #d97706;
-        }
-        
-        .hero-pattern {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
     <!-- Navigation -->
     <nav id="mainNav" class="bg-white shadow-md sticky top-0 z-40 transition-all duration-300" aria-label="Navegação principal">
         <div class="container mx-auto px-4">
@@ -112,7 +33,7 @@
                 <a href="index.html" class="flex items-center focus:outline-none">
                     <img src="images/logo-dexcarte.png" alt="Dexcarte Logo" class="h-16">
                 </a>
-                <div class="hidden md:flex space-x-8">
+                <div class="hidden lg:flex space-x-6">
                     <a href="index.html" class="nav-link text-gray-800 font-medium">Home</a>
                     <a href="oqfazemos.html" class="nav-link active text-yellow-600 font-medium">O que Fazemos</a>
                     <a href="catalogos.html" class="nav-link text-gray-800 font-medium">Catálogos</a>
@@ -120,9 +41,9 @@
                     <a href="pedido_orcamento.html" class="nav-link text-gray-800 font-medium">Pedido de Orçamentos</a>
                     <a href="contactos.html" class="nav-link text-gray-800 font-medium">Contactos</a>
                 </div>
-                <div class="md:hidden">
+                <div class="lg:hidden">
                     <button id="mobileMenuButton" class="mobile-menu-button text-gray-800 hover:text-yellow-600 focus:outline-none p-2" aria-expanded="false" aria-controls="mobileMenu">
-                        <span class="material-icons text-3xl" aria-hidden="true">menu</span>
+                        <i data-feather="menu" aria-hidden="true" class="w-8 h-8"></i>
                         <span class="sr-only">Abrir menu</span>
                     </button>
                 </div>
@@ -131,7 +52,7 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden md:hidden bg-white shadow-xl border-t border-gray-100 absolute w-full z-30 transform transition-transform duration-300 origin-top -translate-y-2 opacity-0">
+    <div id="mobileMenu" class="hidden lg:hidden bg-white shadow-xl border-t border-gray-100 fixed top-24 w-full z-30 transform transition-transform duration-300 origin-top -translate-y-2 opacity-0">
         <div class="container mx-auto px-6 py-4 flex flex-col space-y-2">
             <a href="index.html" class="block py-3 text-lg text-gray-800 hover:text-yellow-600 transition-colors border-b border-gray-50">Home</a>
             <a href="oqfazemos.html" class="block py-3 text-lg text-yellow-600 font-medium border-b border-gray-50">O que Fazemos</a>
@@ -418,48 +339,6 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobileMenuButton');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
-            if (mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.remove('hidden');
-                setTimeout(() => {
-                    mobileMenu.classList.remove('-translate-y-2', 'opacity-0');
-                    mobileMenu.classList.add('translate-y-0', 'opacity-100');
-                }, 10);
-            } else {
-                mobileMenu.classList.remove('translate-y-0', 'opacity-100');
-                mobileMenu.classList.add('-translate-y-2', 'opacity-0');
-                setTimeout(() => {
-                    mobileMenu.classList.add('hidden');
-                }, 300);
-            }
-            if (typeof feather !== 'undefined') feather.replace();
-        });
-
-        // Close on click outside
-        document.addEventListener('click', (e) => {
-            if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.remove('translate-y-0', 'opacity-100');
-                    mobileMenu.classList.add('-translate-y-2', 'opacity-0');
-                    setTimeout(() => {
-                        mobileMenu.classList.add('hidden');
-                    }, 300);
-                    mobileMenuButton.setAttribute('aria-expanded', 'false');
-                }
-            }
-        });
-        
-        // Initialize feather icons
-        document.addEventListener('DOMContentLoaded', () => {
-            feather.replace();
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
